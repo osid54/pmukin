@@ -1,3 +1,5 @@
+Node
+TextureRect
 CanvasLayer
 ColorRect
 Camera2D
@@ -6,6 +8,5 @@ Area2D
 Sprite2D
 GPUParticles2D
 Timer
-Node
 Button
 AnimatedSprite2D

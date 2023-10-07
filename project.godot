@@ -12,12 +12,19 @@ config_version=5
 
 config/name="pmukin"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://src/sprites/plants/pumpS.png"
 
 [autoload]
 
 Autoload="*res://actors/autoload/autoload.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/borderless=true
 
 [input]
 

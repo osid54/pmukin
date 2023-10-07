@@ -22,12 +22,13 @@ func plantSeed(ptype:int):
 	plant = p
 
 func interact():
-	if !inUse:
-		plantSeed(randi_range(0,2))
-		inUse = true
-	else:
-		if plant.harvestable:
-			Autoload.heldObject = types[plant.plantType]
-			plant.queue_free()
-			plant = null
-			inUse = false
+	if Autoload.heldObject == "":
+		if !inUse:
+			plantSeed(randi_range(0,2))
+			inUse = true
+		else:
+			if plant.harvestable:
+				Autoload.heldObject = types[plant.plantType]
+				plant.queue_free()
+				plant = null
+				inUse = false

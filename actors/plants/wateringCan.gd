@@ -1,4 +1,5 @@
 extends Sprite2D
 
 func interact():
-	Autoload.heldObject = "waterCan"
+	if Autoload.heldObject == "":
+		Autoload.heldObject = "waterCan"
