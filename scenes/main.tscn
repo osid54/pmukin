@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=4 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="PackedScene" uid="uid://dixfnvavyadkg" path="res://actors/plants/box.tscn" id="2_v7jxc"]
+[ext_resource type="PackedScene" uid="uid://r2o7l065btfh" path="res://actors/plants/wateringCan.tscn" id="3_vrj7q"]
 
 [node name="main" type="Node2D"]
 
@@ -16,3 +17,6 @@ position = Vector2(949, 342)
 
 [node name="shrrom" parent="." instance=ExtResource("1_6iywo")]
 position = Vector2(145, 328)
+
+[node name="can" parent="." instance=ExtResource("3_vrj7q")]
+position = Vector2(143, 406)

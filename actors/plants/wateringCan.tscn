@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://r2o7l065btfh"]
+
+[ext_resource type="Texture2D" uid="uid://bbk7o8ybpw2sd" path="res://src/sprites/plants/waterCan.png" id="1_ebyh1"]
+[ext_resource type="Script" path="res://actors/plants/wateringCan.gd" id="2_61vfu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4qqw"]
+radius = 51.0
+height = 152.0
+
+[node name="can" type="Sprite2D"]
+texture = ExtResource("1_ebyh1")
+script = ExtResource("2_61vfu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+rotation = 4.71239
+shape = SubResource("CapsuleShape2D_y4qqw")
