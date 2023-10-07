@@ -3,6 +3,7 @@ extends Sprite2D
 var plantRef : PackedScene = preload("res://actors/plants/plant.tscn")
 
 var plant
+var types = ["pumpS","pumpM","pumpL"]
 
 var inUse := false
 
@@ -26,6 +27,7 @@ func interact():
 		inUse = true
 	else:
 		if plant.harvestable:
-			Autoload.heldObject = 
+			Autoload.heldObject = types[plant.plantType]
 			plant.queue_free()
 			plant = null
+			inUse = false

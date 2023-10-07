@@ -7,8 +7,8 @@ var heldObject = "":
 	get:
 		return heldObject
 	set(value):
-		heldChanged.emit()
 		heldObject = value
+		heldChanged.emit()
 
 #""
 #"seed[SML]"
