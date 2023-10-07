@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy2pn08bj51in"]
+
+[ext_resource type="Texture2D" uid="uid://cmdc0oqfcrcg" path="res://src/sprites/mainShroom/mainIdle1.png" id="1_r5rk7"]
+[ext_resource type="Texture2D" uid="uid://cosf4v0aytx7y" path="res://src/sprites/mainShroom/mainIdle2.png" id="2_r707w"]
+[ext_resource type="Texture2D" uid="uid://tybhtbcr884v" path="res://src/sprites/mainShroom/mainWalk1.png" id="3_15li5"]
+[ext_resource type="Texture2D" uid="uid://3138d2lg7o8r" path="res://src/sprites/mainShroom/mainWalk2.png.png" id="4_k326m"]
+[ext_resource type="Script" path="res://actors/characters/mainShroom.gd" id="5_mk11s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1u7ka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r5rk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r707w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_15li5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_r5rk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k326m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_r5rk7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqyq3"]
+radius = 42.0
+height = 192.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g1vj3"]
+
+[node name="shrrom" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1u7ka")
+animation = &"walk"
+frame_progress = 0.547808
+script = ExtResource("5_mk11s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 66)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_wqyq3")
+
+[node name="heldItem" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+scale = Vector2(128, 128)
+texture = SubResource("PlaceholderTexture2D_g1vj3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

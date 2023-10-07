@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmrpfknpgivph"]
+
+[ext_resource type="Texture2D" uid="uid://35knmod4p13v" path="res://src/sprites/effects/particle.png" id="1_vhki8"]
+[ext_resource type="Script" path="res://actors/effects/particles.gd" id="2_xefjf"]
+
+[sub_resource type="Gradient" id="Gradient_0fyxj"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mm371"]
+gradient = SubResource("Gradient_0fyxj")
+
+[sub_resource type="Curve" id="Curve_ff3n0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.42975, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bqn0j"]
+curve = SubResource("Curve_ff3n0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ej8nr"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 90.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_max = 25.0
+angle_min = -720.0
+angle_max = 720.0
+scale_curve = SubResource("CurveTexture_bqn0j")
+color_ramp = SubResource("GradientTexture1D_mm371")
+
+[node name="particles" type="GPUParticles2D"]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_ej8nr")
+texture = ExtResource("1_vhki8")
+explosiveness = 1.0
+randomness = 1.0
+script = ExtResource("2_xefjf")
