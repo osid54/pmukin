@@ -41,7 +41,7 @@ animations = [{
 radius = 42.0
 height = 192.0
 
-[node name="shrrom" type="AnimatedSprite2D"]
+[node name="shroom" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_1u7ka")
 animation = &"walk"
 frame_progress = 0.547808
