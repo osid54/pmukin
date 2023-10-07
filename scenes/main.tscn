@@ -18,20 +18,11 @@ grow_vertical = 2
 color = Color(0.2, 0.270588, 0.34902, 1)
 
 [node name="box" parent="." instance=ExtResource("2_v7jxc")]
-position = Vector2(428, 335)
-
-[node name="box2" parent="." instance=ExtResource("2_v7jxc")]
-position = Vector2(701, 333)
-
-[node name="box3" parent="." instance=ExtResource("2_v7jxc")]
-position = Vector2(949, 342)
 
 [node name="shroom" parent="." instance=ExtResource("1_6iywo")]
-position = Vector2(145, 328)
 speed = 500
 
 [node name="can" parent="." instance=ExtResource("3_vrj7q")]
-position = Vector2(143, 406)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
