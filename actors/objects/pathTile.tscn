@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsj6ynm40wq0a"]
+
+[ext_resource type="Texture2D" uid="uid://bf2o8eyfahscp" path="res://src/sprites/other/tileGrass.png" id="1_1ikc0"]
+[ext_resource type="Script" path="res://actors/objects/pathTile.gd" id="2_x402f"]
+
+[node name="pathTile" type="Sprite2D"]
+texture = ExtResource("1_1ikc0")
+script = ExtResource("2_x402f")

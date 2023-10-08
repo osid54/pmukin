@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=6 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://coi6w8oqva0td" path="res://src/sprites/other/floor.png" id="1_ok0ss"]
 [ext_resource type="PackedScene" uid="uid://dixfnvavyadkg" path="res://actors/plants/box.tscn" id="2_v7jxc"]
 [ext_resource type="PackedScene" uid="uid://r2o7l065btfh" path="res://actors/plants/wateringCan.tscn" id="3_vrj7q"]
+[ext_resource type="PackedScene" uid="uid://bsj6ynm40wq0a" path="res://actors/objects/pathTile.tscn" id="5_w6kf5"]
 
 [node name="main" type="Node2D"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ok0ss")
+stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -18,21 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.270588, 0.34902, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ok0ss")
-stretch_mode = 5
-
 [node name="box" parent="." instance=ExtResource("2_v7jxc")]
 position = Vector2(-1554, 0)
 
@@ -44,3 +45,18 @@ speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="pathTile" parent="." instance=ExtResource("5_w6kf5")]
+position = Vector2(243, 778)
+
+[node name="pathTile2" parent="." instance=ExtResource("5_w6kf5")]
+position = Vector2(576, 879)
+
+[node name="pathTile3" parent="." instance=ExtResource("5_w6kf5")]
+position = Vector2(904, 724)
+
+[node name="pathTile4" parent="." instance=ExtResource("5_w6kf5")]
+position = Vector2(1284, 766)
+
+[node name="pathTile5" parent="." instance=ExtResource("5_w6kf5")]
+position = Vector2(1650, 864)
