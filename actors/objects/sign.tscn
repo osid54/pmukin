@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnxsn8rmkj3ac" path="res://src/sprites/other/sign.png" id="1_mx132"]
 [ext_resource type="Script" path="res://actors/objects/sign.gd" id="2_dqc5e"]
-[ext_resource type="PackedScene" uid="uid://2ryshososbfl" path="res://actors/effects/pointer.tscn" id="3_yqy52"]
+[ext_resource type="PackedScene" uid="uid://b3q8ojpfkkddj" path="res://actors/effects/pointer.tscn" id="3_yqy52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgqt4"]
 size = Vector2(130, 114)

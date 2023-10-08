@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=14 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://cawf1strshquc" path="res://src/sprites/other/background.png" id="1_pwavv"]
@@ -9,12 +9,22 @@
 [ext_resource type="PackedScene" uid="uid://ohu6sxhfpkve" path="res://actors/characters/crow.tscn" id="7_wyjx3"]
 [ext_resource type="PackedScene" uid="uid://bmgx8um1prcri" path="res://actors/objects/sign.tscn" id="8_jswxk"]
 [ext_resource type="PackedScene" uid="uid://qmcm2s2tqy1p" path="res://actors/objects/seedBag.tscn" id="9_i31qb"]
+[ext_resource type="PackedScene" uid="uid://d276qxcp1i6aq" path="res://actors/characters/thrownPump.tscn" id="10_8ks7h"]
 
 [sub_resource type="Curve2D" id="Curve2D_s86mj"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -626, 17, 0, 0, 0, 0, -430, 0, 0, 0, 0, 0, -233, -96, 0, 0, 0, 0, -84, -196, 0, 0, 0, 0, 37, -191, 0, 0, 0, 0, 144, -133, 0, 0, 0, 0, 252, -8)
 }
 point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_qhj37"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -876, 283, 0, 0, 0, 0, -719, 527, 0, 0, 0, 0, -343, 752, 0, 0, 0, 0, 239, 824, 0, 0, 0, 0, 570, 931, 0, 0, 0, 0, 896, 773, 0, 0, 0, 0, 1280, 813, 0, 0, 0, 0, 1654, 915, 0, 0, 0, 0, 2166, 877)
+}
+point_count = 9
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gb3q3"]
+size = Vector2(32, 32)
 
 [node name="main" type="Node2D"]
 
@@ -76,21 +86,33 @@ position = Vector2(-875, 335)
 
 [node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="shroomPath" type="Path2D" parent="."]
 position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="shroomPath"]
 position = Vector2(239.169, -22.8506)
 rotation = -0.0544209
 progress = 983.696
 rotates = false
 loop = false
 
-[node name="shroom" parent="Path2D/PathFollow2D" instance=ExtResource("1_6iywo")]
+[node name="shroom" parent="shroomPath/PathFollow2D" instance=ExtResource("1_6iywo")]
 position = Vector2(0, -64)
 rotation = 0.0544209
 speed = 500
+
+[node name="pumpPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_qhj37")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="pumpPath"]
+position = Vector2(-876, 283)
+rotation = 0.999045
+rotates = false
+loop = false
+
+[node name="thrownPump" parent="pumpPath/PathFollow2D" instance=ExtResource("10_8ks7h")]
+texture = SubResource("PlaceholderTexture2D_gb3q3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -3.05176e-05)

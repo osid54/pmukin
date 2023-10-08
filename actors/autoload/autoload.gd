@@ -2,6 +2,8 @@ extends Node
 
 signal timeTick
 
+signal pumpThrown
+
 signal heldChanged()
 var heldObject = "":
 	get:
@@ -9,11 +11,6 @@ var heldObject = "":
 	set(value):
 		heldObject = value
 		heldChanged.emit()
-
-#""
-#"seed[SML]"
-#"pump[SML]"
-#"water"
 
 func _ready():
 	pass
@@ -24,3 +21,6 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	emit_signal("timeTick") 
+
+func throwPumpkin():
+	pumpThrown.emit()

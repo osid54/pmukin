@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://2ryshososbfl"]
+[gd_scene load_steps=6 format=3 uid="uid://b3q8ojpfkkddj"]
 
 [ext_resource type="Texture2D" uid="uid://djrpijmj1o0e5" path="res://src/sprites/pointer/pointer3.png" id="1_hnloj"]
 [ext_resource type="Texture2D" uid="uid://bwnb4kym4xlva" path="res://src/sprites/pointer/pointer2.png" id="2_7micu"]
 [ext_resource type="Texture2D" uid="uid://b27gq5wb5h4hx" path="res://src/sprites/pointer/pointer1.png" id="3_7wwhu"]
-[ext_resource type="Script" path="res://pointer.gd" id="4_mqsjs"]
+[ext_resource type="Script" path="res://actors/effects/pointer.gd" id="4_4t5cb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk7l8"]
 animations = [{
@@ -24,5 +24,5 @@ animations = [{
 
 [node name="pointer" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_nk7l8")
-frame_progress = 0.147107
-script = ExtResource("4_mqsjs")
+frame_progress = 0.881366
+script = ExtResource("4_4t5cb")

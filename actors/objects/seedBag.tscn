@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://mpcu1qivbhth" path="res://src/sprites/other/seedBag.png" id="1_bhbc0"]
 [ext_resource type="Script" path="res://actors/objects/seedBag.gd" id="2_ddcqs"]
-[ext_resource type="PackedScene" uid="uid://2ryshososbfl" path="res://actors/effects/pointer.tscn" id="3_l7kwc"]
+[ext_resource type="PackedScene" uid="uid://b3q8ojpfkkddj" path="res://actors/effects/pointer.tscn" id="3_l7kwc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xd60v"]
 radius = 60.0

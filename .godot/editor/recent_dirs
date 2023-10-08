@@ -1,10 +1,10 @@
+res://actors/characters
 res://actors/effects
 res://actors/objects
 res://scenes
 res://src/sprites/enemyShrooms
 res://src/sprites/other
 res://src/animationFrames
-res://actors/characters
 res://actors/plants
 res://src/sprites/plants
 res://actors/autoload

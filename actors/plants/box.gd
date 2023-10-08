@@ -28,13 +28,14 @@ func interact():
 				inUse = false
 				$cropPointer.visible = false
 
-
 func areaEntered(_area):
-	if !inUse:
-		$plantPointer.visible = true
-	else:
-		if plant.harvestable:
-			$cropPointer.visible = true
+	if Autoload.heldObject == "":
+		if !inUse:
+			$plantPointer.visible = true
+		else:
+			if plant.harvestable:
+				$cropPointer.position = Vector2(0,pointerLoc[plant.plantType])
+				$cropPointer.visible = true
 
 func areaExited(_area):
 	$plantPointer.visible = false

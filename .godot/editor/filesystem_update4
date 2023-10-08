@@ -11,3 +11,8 @@ res://actors/effects/pointer.tscn
 res://actors/plants/box.tscn
 res://actors/plants/box.gd
 res://actors/objects/sign.tscn
+res://actors/autoload/autoload.gd
+res://thrownPump.gd
+res://actors/characters/thrownPump.tscn
+res://actors/characters/thrownPump.gd
+res://actors/objects/pathTile.gd
