@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dixfnvavyadkg"]
+[gd_scene load_steps=5 format=3 uid="uid://dixfnvavyadkg"]
 
 [ext_resource type="Texture2D" uid="uid://cscodwsvblwng" path="res://src/sprites/plants/box.png" id="1_o3gww"]
 [ext_resource type="Script" path="res://actors/plants/box.gd" id="1_ywsww"]
+[ext_resource type="PackedScene" uid="uid://2ryshososbfl" path="res://actors/effects/pointer.tscn" id="3_y2bd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr8d1"]
 size = Vector2(116, 78)
@@ -15,3 +16,16 @@ script = ExtResource("1_ywsww")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 60)
 shape = SubResource("RectangleShape2D_wr8d1")
+
+[node name="plantPointer" parent="." instance=ExtResource("3_y2bd2")]
+visible = false
+position = Vector2(0, -38)
+col = "plant"
+
+[node name="cropPointer" parent="." instance=ExtResource("3_y2bd2")]
+visible = false
+position = Vector2(0, -159)
+col = "pump"
+
+[connection signal="area_entered" from="Area2D" to="." method="areaEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="areaExited"]

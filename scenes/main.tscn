@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=11 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://cawf1strshquc" path="res://src/sprites/other/background.png" id="1_pwavv"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bq5gifmxnr2gb" path="res://actors/characters/enemyController.tscn" id="6_n0c4a"]
 [ext_resource type="PackedScene" uid="uid://ohu6sxhfpkve" path="res://actors/characters/crow.tscn" id="7_wyjx3"]
 [ext_resource type="PackedScene" uid="uid://bmgx8um1prcri" path="res://actors/objects/sign.tscn" id="8_jswxk"]
+[ext_resource type="PackedScene" uid="uid://qmcm2s2tqy1p" path="res://actors/objects/seedBag.tscn" id="9_i31qb"]
 
 [sub_resource type="Curve2D" id="Curve2D_s86mj"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -626, 17, 0, 0, 0, 0, -430, 0, 0, 0, 0, 0, -233, -96, 0, 0, 0, 0, -84, -196, 0, 0, 0, 0, 95, -125, 0, 0, 0, 0, 252, -8)
+"points": PackedVector2Array(0, 0, 0, 0, -626, 17, 0, 0, 0, 0, -430, 0, 0, 0, 0, 0, -233, -96, 0, 0, 0, 0, -84, -196, 0, 0, 0, 0, 37, -191, 0, 0, 0, 0, 144, -133, 0, 0, 0, 0, 252, -8)
 }
-point_count = 6
+point_count = 7
 
 [node name="main" type="Node2D"]
 
@@ -52,29 +53,35 @@ position = Vector2(1650, 864)
 position = Vector2(1284, 766)
 
 [node name="box" parent="." instance=ExtResource("2_v7jxc")]
-position = Vector2(-1825, 271)
+position = Vector2(-1815, 267)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+[node name="box2" parent="." instance=ExtResource("2_v7jxc")]
+position = Vector2(-1609, 230)
 
-[node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
+[node name="box3" parent="." instance=ExtResource("2_v7jxc")]
+position = Vector2(-1424, 137)
+
+[node name="bag" parent="." instance=ExtResource("9_i31qb")]
+position = Vector2(-1244, 120)
 
 [node name="BirdPerch" type="Sprite2D" parent="."]
-position = Vector2(-1140, 40)
+position = Vector2(-1076, 53)
 texture = ExtResource("6_jlbh1")
 
 [node name="crow" parent="." instance=ExtResource("7_wyjx3")]
-position = Vector2(-1140, -59)
+position = Vector2(-1076, -46)
 
 [node name="sign" parent="." instance=ExtResource("8_jswxk")]
 position = Vector2(-875, 335)
+
+[node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(252, -8)
+position = Vector2(239.169, -22.8506)
 rotation = -0.0544209
 progress = 983.696
 rotates = false
@@ -84,3 +91,7 @@ loop = false
 position = Vector2(0, -64)
 rotation = 0.0544209
 speed = 500
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -3.05176e-05)
+zoom = Vector2(0.5, 0.5)

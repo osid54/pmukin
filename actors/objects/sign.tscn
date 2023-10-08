@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmgx8um1prcri"]
+[gd_scene load_steps=5 format=3 uid="uid://bmgx8um1prcri"]
 
 [ext_resource type="Texture2D" uid="uid://dnxsn8rmkj3ac" path="res://src/sprites/other/sign.png" id="1_mx132"]
 [ext_resource type="Script" path="res://actors/objects/sign.gd" id="2_dqc5e"]
+[ext_resource type="PackedScene" uid="uid://2ryshososbfl" path="res://actors/effects/pointer.tscn" id="3_yqy52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgqt4"]
 size = Vector2(130, 114)
@@ -16,3 +17,11 @@ script = ExtResource("2_dqc5e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(10, -57)
 shape = SubResource("RectangleShape2D_cgqt4")
+
+[node name="pointer" parent="." instance=ExtResource("3_yqy52")]
+visible = false
+position = Vector2(0, -157)
+col = "throw"
+
+[connection signal="area_entered" from="Area2D" to="." method="areaEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="areaExited"]

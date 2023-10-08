@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://qmcm2s2tqy1p"]
+
+[ext_resource type="Texture2D" uid="uid://mpcu1qivbhth" path="res://src/sprites/other/seedBag.png" id="1_bhbc0"]
+[ext_resource type="Script" path="res://actors/objects/seedBag.gd" id="2_ddcqs"]
+[ext_resource type="PackedScene" uid="uid://2ryshososbfl" path="res://actors/effects/pointer.tscn" id="3_l7kwc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xd60v"]
+radius = 60.0
+height = 164.0
+
+[node name="bag" type="Sprite2D"]
+texture = ExtResource("1_bhbc0")
+offset = Vector2(0, -64)
+script = ExtResource("2_ddcqs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -22)
+shape = SubResource("CapsuleShape2D_xd60v")
+
+[node name="bagPointer" parent="." instance=ExtResource("3_l7kwc")]
+visible = false
+position = Vector2(0, -136)
+col = "bag"
+
+[connection signal="area_entered" from="Area2D" to="." method="areaEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="areaExited"]

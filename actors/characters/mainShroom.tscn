@@ -38,8 +38,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqyq3"]
-radius = 88.0
-height = 276.0
+radius = 43.0
+height = 148.0
 
 [node name="shroom" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_1u7ka")
@@ -51,7 +51,7 @@ script = ExtResource("5_mk11s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 10)
-rotation = -1.57079
+rotation = -3.14159
 shape = SubResource("CapsuleShape2D_wqyq3")
 
 [node name="heldItem" type="Sprite2D" parent="."]

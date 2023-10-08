@@ -4,16 +4,9 @@ var plantRef : PackedScene = preload("res://actors/plants/plant.tscn")
 
 var plant
 var types = ["pumpS","pumpM","pumpL"]
+var pointerLoc = [-38,-116,-159]
 
 var inUse := false
-
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func plantSeed(ptype:int):
 	var p = plantRef.instantiate()
@@ -26,9 +19,23 @@ func interact():
 		if !inUse:
 			plantSeed(randi_range(0,2))
 			inUse = true
+			$plantPointer.visible = false
 		else:
 			if plant.harvestable:
 				Autoload.heldObject = types[plant.plantType]
 				plant.queue_free()
 				plant = null
 				inUse = false
+				$cropPointer.visible = false
+
+
+func areaEntered(_area):
+	if !inUse:
+		$plantPointer.visible = true
+	else:
+		if plant.harvestable:
+			$cropPointer.visible = true
+
+func areaExited(_area):
+	$plantPointer.visible = false
+	$cropPointer.visible = false

@@ -4,3 +4,10 @@ res://scenes/menu.gd
 res://actors/objects/sign.gd
 res://actors/characters/mainShroom.gd
 res://actors/characters/mainShroom.tscn
+res://actors/objects/seedBag.tscn
+res://actors/objects/seedBag.gd
+res://pointer.gd
+res://actors/effects/pointer.tscn
+res://actors/plants/box.tscn
+res://actors/plants/box.gd
+res://actors/objects/sign.tscn

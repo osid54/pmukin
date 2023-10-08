@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://2ryshososbfl"]
+
+[ext_resource type="Texture2D" uid="uid://djrpijmj1o0e5" path="res://src/sprites/pointer/pointer3.png" id="1_hnloj"]
+[ext_resource type="Texture2D" uid="uid://bwnb4kym4xlva" path="res://src/sprites/pointer/pointer2.png" id="2_7micu"]
+[ext_resource type="Texture2D" uid="uid://b27gq5wb5h4hx" path="res://src/sprites/pointer/pointer1.png" id="3_7wwhu"]
+[ext_resource type="Script" path="res://pointer.gd" id="4_mqsjs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nk7l8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hnloj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7micu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7wwhu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="pointer" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_nk7l8")
+frame_progress = 0.147107
+script = ExtResource("4_mqsjs")
