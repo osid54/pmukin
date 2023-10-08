@@ -1,8 +1,8 @@
+res://actors/objects
+res://actors/characters
 res://src/sprites/enemyShrooms
 res://src/sprites/other
 res://src/animationFrames
-res://actors/characters
-res://actors/objects
 res://actors/plants
 res://src/sprites/plants
 res://actors/effects

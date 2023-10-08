@@ -28,4 +28,8 @@ func interact():
 		areas[0].get_parent().interact()
 
 func changeObj():
+	if Autoload.heldObject == "":
+		$heldItem.visible = false
+		return
+	$heldItem.visible = true
 	$heldItem.texture = load("res://src/sprites/plants/"+Autoload.heldObject+".png")
