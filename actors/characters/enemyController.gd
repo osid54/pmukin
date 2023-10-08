@@ -79,4 +79,5 @@ func dmgEnemies(pType: String):
 						break
 			if !gonnaBreak:
 				targets.append(5)
+	print(targets," ",dmg)
 	Autoload.throwPumpkin(targets,dmg)
