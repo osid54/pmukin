@@ -16,3 +16,6 @@ res://thrownPump.gd
 res://actors/characters/thrownPump.tscn
 res://actors/characters/thrownPump.gd
 res://actors/objects/pathTile.gd
+res://actors/characters/enemyShroom.tscn
+res://actors/characters/enemyShroom.gd
+res://actors/characters/enemyController.gd

@@ -24,7 +24,7 @@ _data = {
 point_count = 9
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gb3q3"]
-size = Vector2(32, 32)
+size = Vector2(128, 128)
 
 [node name="main" type="Node2D"]
 

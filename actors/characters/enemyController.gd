@@ -51,3 +51,22 @@ func spawnEnemies(path: Array):
 			if enemyPath[i] != null:
 				enemyPath[i].position = tilePos[5]
 		
+func dmgEnemies(pType: String):
+	match pType:
+		"pumpS":
+			for i in 5:
+				if enemyPath[i] != null:
+					enemyPath[i].hit(1)
+		"pumpM":
+			for i in 2:
+				if enemyPath[i] != null:
+					enemyPath[i].hit(2)
+		"pumpL":
+			for i in 5:
+				if enemyPath[i] != null:
+					var gonnaBreak = false
+					if enemyPath[i].enemyType == 3:
+						gonnaBreak = true
+					enemyPath[i].hit(3)
+					if gonnaBreak:
+						break

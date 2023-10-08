@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 var enemyType := 1
+var health := 1
 
 var frames := ["mushD", "mushS", "mushM", "mushL"]
 var offsets := [0, -64, -200, -200]
@@ -8,6 +9,7 @@ var offsets := [0, -64, -200, -200]
 func _ready():
 	play(frames[enemyType]+"idle")
 	offset = Vector2(0,offsets[enemyType])
+	health = enemyType
 
 func walkTo(pos: Vector2):
 	play(frames[enemyType]+"walk")
@@ -21,3 +23,8 @@ func walkTo(pos: Vector2):
 		await get_tree().create_timer(walkTime/walkSplit).timeout
 
 	play(frames[enemyType]+"idle")
+
+func hit(dmg: int):
+	health -= dmg
+	if health <= 0:
+		queue_free()

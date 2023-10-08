@@ -23,4 +23,6 @@ func _on_timer_timeout():
 	emit_signal("timeTick") 
 
 func throwPumpkin():
+	var pump = heldObject
+	
 	pumpThrown.emit()
