@@ -22,8 +22,9 @@ func moveEnemies():
 		for i in enemyPath.size():
 			if i==0:
 				if enemyPath[i] != null:
-					print("dead")
-					enemyPath[i].queue_free()
+					Autoload.dead()
+					await enemyPath[i].walkTo(Vector2(-1228,938))
+					queue_free()
 			else:
 				tempPath.append(enemyPath[i])
 		enemyPath = tempPath
@@ -61,6 +62,7 @@ func dmgEnemies(pType: String):
 					targets.append(i)
 					dmg.append(1)
 					break
+			if targets==[]:
 				targets.append(5)
 		"pumpM":
 			for i in 2:
@@ -79,5 +81,5 @@ func dmgEnemies(pType: String):
 						break
 			if !gonnaBreak:
 				targets.append(5)
-	print(targets," ",dmg)
+	#print(targets," ",dmg)
 	Autoload.throwPumpkin(targets,dmg)

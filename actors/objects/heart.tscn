@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbkibrct0ouh4"]
+
+[ext_resource type="Script" path="res://actors/objects/heart.gd" id="1_fe7rp"]
+[ext_resource type="Texture2D" uid="uid://coc8ecqphrjkw" path="res://src/sprites/other/heartBase.png" id="1_m0u5i"]
+[ext_resource type="Texture2D" uid="uid://bbdocdt6malyb" path="res://src/sprites/other/heartInner.png" id="2_pf8iw"]
+[ext_resource type="Texture2D" uid="uid://ysb8i8p630y3" path="res://src/sprites/other/heartOutline.png" id="3_82slj"]
+
+[node name="heart" type="Node2D"]
+script = ExtResource("1_fe7rp")
+
+[node name="HeartBase" type="Sprite2D" parent="."]
+texture = ExtResource("1_m0u5i")
+
+[node name="HeartInner" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_pf8iw")
+
+[node name="HeartOutline" type="Sprite2D" parent="."]
+texture = ExtResource("3_82slj")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -119.0
+offset_top = -627.0
+offset_right = 2749.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 500
+text = "GAME OVER"

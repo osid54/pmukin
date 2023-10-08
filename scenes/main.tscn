@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmgx8um1prcri" path="res://actors/objects/sign.tscn" id="8_jswxk"]
 [ext_resource type="PackedScene" uid="uid://qmcm2s2tqy1p" path="res://actors/objects/seedBag.tscn" id="9_i31qb"]
 [ext_resource type="PackedScene" uid="uid://d276qxcp1i6aq" path="res://actors/characters/thrownPump.tscn" id="10_8ks7h"]
+[ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
 
 [sub_resource type="Curve2D" id="Curve2D_s86mj"]
 _data = {
@@ -22,9 +23,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -876, 283, 0, 0, 0, 0, -719, 527, 0, 0, 0, 0, -343, 752, 0, 0, 0, 0, 239, 824, 0, 0, 0, 0, 570, 931, 0, 0, 0, 0, 896, 773, 0, 0, 0, 0, 1280, 813, 0, 0, 0, 0, 1654, 915, 0, 0, 0, 0, 2166, 877)
 }
 point_count = 9
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gb3q3"]
-size = Vector2(128, 128)
 
 [node name="main" type="Node2D"]
 
@@ -84,6 +82,9 @@ position = Vector2(-1076, -46)
 [node name="sign" parent="." instance=ExtResource("8_jswxk")]
 position = Vector2(-875, 335)
 
+[node name="heart" parent="." instance=ExtResource("11_hw7ps")]
+position = Vector2(-1228, 738)
+
 [node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
 
 [node name="shroomPath" type="Path2D" parent="."]
@@ -91,15 +92,17 @@ position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="shroomPath"]
-position = Vector2(239.169, -22.8506)
+position = Vector2(94.5559, -159.801)
 rotation = -0.0544209
-progress = 983.696
+progress = 781.898
 rotates = false
 loop = false
 
 [node name="shroom" parent="shroomPath/PathFollow2D" instance=ExtResource("1_6iywo")]
 position = Vector2(0, -64)
 rotation = 0.0544209
+animation = &"idle"
+frame_progress = 0.0
 speed = 500
 
 [node name="pumpPath" type="Path2D" parent="."]
@@ -112,7 +115,6 @@ rotates = false
 loop = false
 
 [node name="thrownPump" parent="pumpPath/PathFollow2D" instance=ExtResource("10_8ks7h")]
-texture = SubResource("PlaceholderTexture2D_gb3q3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -3.05176e-05)

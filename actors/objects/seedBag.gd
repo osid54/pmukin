@@ -20,7 +20,8 @@ func hideOptions():
 	pass
 
 func areaEntered(_area):
-	$bagPointer.visible = true
+	if Autoload.heldObject == "":
+		$bagPointer.visible = true
 
 func areaExited(_area):
 	$bagPointer.visible = false

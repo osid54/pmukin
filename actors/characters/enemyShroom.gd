@@ -23,8 +23,10 @@ func walkTo(pos: Vector2):
 		await get_tree().create_timer(walkTime/walkSplit).timeout
 
 	play(frames[enemyType]+"idle")
+	return
 
 func hit(dmg: int):
+	print("dmg done: ",dmg)
 	health -= dmg
 	if health <= 0:
 		queue_free()

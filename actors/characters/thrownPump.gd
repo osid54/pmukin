@@ -9,7 +9,7 @@ func go(targ: Array, dmg: Array):
 	var end = locations[targ[-1]]
 	get_parent().progress_ratio = 0
 	texture = load("res://src/sprites/plants/"+Autoload.heldObject+".png")
-	for i in end*1000:
+	for i in end*1001:
 		get_parent().progress_ratio += .001
 		rotate(TAU/100)
 		
@@ -18,11 +18,12 @@ func go(targ: Array, dmg: Array):
 			if get_parent().progress_ratio >= locations[l]:
 				pos = l
 		for j in targ.size():
-#			if targ[j] != -1:
-#				print("t: ",targ[j]," p: ",pos)
+			#if targ[j] != -1:
+				#print("t: ",targ[j]," p: ",pos)
 			if pos == targ[j]:
 				EnemyController.enemyPath[pos].hit(dmg[j])
-#				print("did damage ",dmg[j])
+				print("did damage ",dmg[j])
 				targ[j] = -1
 		await get_tree().create_timer(.005).timeout
 	texture = null
+	Autoload.passTime()

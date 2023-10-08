@@ -32,6 +32,7 @@ func timerUp():
 	elif growthLevel == plantType+1:
 		texture = kins[plantType]
 		harvestable = true
+		Autoload.numSeeded -= 1
 	growthLevel+=1
 	particleSpawn()
 

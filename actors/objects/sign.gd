@@ -6,7 +6,8 @@ func interact():
 		Autoload.heldObject = ""
 
 func areaEntered(_area):
-	$pointer.visible = true
+	if ["pumpS","pumpM","pumpL"].has(Autoload.heldObject):
+		$pointer.visible = true
 
 func areaExited(_area):
 	$pointer.visible = false

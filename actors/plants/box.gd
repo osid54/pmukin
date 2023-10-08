@@ -20,6 +20,7 @@ func interact():
 			plantSeed(randi_range(0,2))
 			inUse = true
 			$plantPointer.visible = false
+			Autoload.numSeeded += 1
 		else:
 			if plant.harvestable:
 				Autoload.heldObject = types[plant.plantType]

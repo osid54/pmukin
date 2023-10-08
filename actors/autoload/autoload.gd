@@ -1,10 +1,10 @@
 extends Node
 
 signal timeTick
-
 signal pumpThrown(targets,damage)
+signal heldChanged
+signal died
 
-signal heldChanged()
 var heldObject = "":
 	get:
 		return heldObject
@@ -12,17 +12,33 @@ var heldObject = "":
 		heldObject = value
 		heldChanged.emit()
 
+var numPots := 3
+var numSeeded := 0
+
 func _ready():
-	pass
+	spawn()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("spawn"):
-		EnemyController.spawnEnemies([0,1,2,1,0,3,1,2,0,1])
+		spawn()
 	if Input.is_action_just_pressed("time"):
-		emit_signal("timeTick") 
+		passTime()
 
-#func _on_timer_timeout():
-#	emit_signal("timeTick") 
+func spawn():
+		var spawnPath = [0,0,0,0]
+		for i in 10:
+			spawnPath.append(randi_range(0,3))
+		EnemyController.spawnEnemies(spawnPath)	
+
+func _on_timer_timeout():
+	if numPots == numSeeded:
+		passTime()
 
 func throwPumpkin(targ: Array, dmg: Array):
 	pumpThrown.emit(targ,dmg)
+
+func passTime():
+	timeTick.emit()
+
+func dead():
+	died.emit()

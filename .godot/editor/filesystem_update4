@@ -20,3 +20,6 @@ res://actors/characters/enemyShroom.tscn
 res://actors/characters/enemyShroom.gd
 res://actors/characters/enemyController.gd
 res://actors/autoload/autoload.tscn
+res://actors/plants/plant.gd
+res://actors/objects/heart.tscn
+res://actors/objects/heart.gd
