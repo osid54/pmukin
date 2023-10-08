@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://065gpkpsy8lc"]
+
+[ext_resource type="Texture2D" uid="uid://vfr2swice1yn" path="res://src/sprites/enemyShrooms/mushLIdle1.png" id="1_fra5b"]
+[ext_resource type="Texture2D" uid="uid://q12oqb2x4g1o" path="res://src/sprites/enemyShrooms/mushLIdle2.png" id="2_sjmqd"]
+[ext_resource type="Texture2D" uid="uid://bhxd3b4va3wdb" path="res://src/sprites/enemyShrooms/mushLWalk1.png" id="3_5sdfq"]
+[ext_resource type="Texture2D" uid="uid://byphpqdfy434b" path="res://src/sprites/enemyShrooms/mushLWalk2.png" id="4_j4inx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fra5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sjmqd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5sdfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_fra5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j4inx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_fra5b")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

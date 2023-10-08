@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cu4p7b0pt8top"]
+
+[ext_resource type="Texture2D" uid="uid://baacbxhfx81fg" path="res://src/sprites/enemyShrooms/mushSIdle1.png" id="1_jwl1g"]
+[ext_resource type="Texture2D" uid="uid://de3a6bpkbpjpv" path="res://src/sprites/enemyShrooms/mushMIdle1.png" id="2_v0ufh"]
+[ext_resource type="Texture2D" uid="uid://vfr2swice1yn" path="res://src/sprites/enemyShrooms/mushLIdle1.png" id="3_68q75"]
+[ext_resource type="Texture2D" uid="uid://c24tonqyfbh2u" path="res://src/sprites/enemyShrooms/mushSIdle2.png" id="4_4n3si"]
+[ext_resource type="Texture2D" uid="uid://d4mfivwcie2k5" path="res://src/sprites/enemyShrooms/mushMIdle2.png" id="5_e8m80"]
+[ext_resource type="Texture2D" uid="uid://q12oqb2x4g1o" path="res://src/sprites/enemyShrooms/mushLIdle2.png" id="6_ekfsq"]
+[ext_resource type="Texture2D" uid="uid://mpcu1qivbhth" path="res://src/sprites/other/seedBag.png" id="7_1weoo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jwl1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v0ufh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_68q75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4n3si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e8m80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ekfsq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1weoo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6u2ngo0ntli"]
+
+[ext_resource type="SpriteFrames" uid="uid://cu4p7b0pt8top" path="res://src/animationFrames/mushD.tres" id="1_sd71y"]
+[ext_resource type="Script" path="res://actors/characters/enemyShroom.gd" id="7_ow6fm"]
+
+[node name="enemyShroom" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_sd71y")
+animation = &"idle"
+script = ExtResource("7_ow6fm")

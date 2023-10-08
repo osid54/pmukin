@@ -13,3 +13,9 @@ res://actors/objects/pathTile.tscn
 res://actors/objects/pathTile.gd
 res://actors/autoload/autoload.gd
 res://actors/characters/enemyController.gd
+res://src/animationFrames/mushM.tres
+res://src/animationFrames/mushL.tres
+res://enemyShroom.gd
+res://actors/characters/enemyShroom.tscn
+res://actors/characters/enemyShroom.gd
+res://src/animationFrames/mushD.tres

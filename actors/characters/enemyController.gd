@@ -9,9 +9,9 @@ var tilePos = [Vector2(243, 778),
 				Vector2(2084,887)]
 				
 var enemies := [null,
-	preload("res://actors/plants/wateringCan.tscn"),
-	preload("res://actors/plants/wateringCan.tscn"),
-	preload("res://actors/plants/wateringCan.tscn")]
+	preload("res://actors/characters/enemyShroom.tscn"),
+	preload("res://actors/characters/enemyShroom.tscn"),
+	preload("res://actors/characters/enemyShroom.tscn")]
 
 func _ready():
 	Autoload.timeTick.connect(moveEnemies)
@@ -31,14 +31,15 @@ func moveEnemies():
 			enemyPath.append(null)
 		for i in 5:
 			if enemyPath[i] != null:
-				enemyPath[i].position = tilePos[i]
-				#enemyPath[i].walkTo(tilePos[i])
+				enemyPath[i].walkTo(tilePos[i])
 			
 func spawnEnemies(path: Array):
 	enemyPath.clear()
 	for enemyNum in path:
 		if enemyNum != 0:
 			var e = enemies[enemyNum].instantiate()
+			e.enemyType = enemyNum
+			e.setFrames()
 			add_child(e)
 			enemyPath.append(e)
 		else:
