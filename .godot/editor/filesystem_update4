@@ -1,2 +1,6 @@
+res://scenes/main.tscn
 res://scenes/menu.tscn
 res://scenes/menu.gd
+res://actors/objects/sign.gd
+res://actors/characters/mainShroom.gd
+res://actors/characters/mainShroom.tscn

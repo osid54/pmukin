@@ -29,7 +29,8 @@ func interact():
 
 func changeObj():
 	if Autoload.heldObject == "":
-		$heldItem.visible = false
+		#$heldItem.visible = false
+		$heldItem.texture = null
 		return
-	$heldItem.visible = true
+	#$heldItem.visible = true
 	$heldItem.texture = load("res://src/sprites/plants/"+Autoload.heldObject+".png")

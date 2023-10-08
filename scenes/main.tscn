@@ -48,10 +48,6 @@ position = Vector2(1284, 766)
 [node name="box" parent="." instance=ExtResource("2_v7jxc")]
 position = Vector2(-1825, 271)
 
-[node name="shroom" parent="." instance=ExtResource("1_6iywo")]
-position = Vector2(-1247, 235)
-speed = 500
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
@@ -66,3 +62,7 @@ position = Vector2(-1140, -59)
 
 [node name="sign" parent="." instance=ExtResource("8_jswxk")]
 position = Vector2(-875, 335)
+
+[node name="shroom" parent="." instance=ExtResource("1_6iywo")]
+position = Vector2(-1351, 309)
+speed = 500
