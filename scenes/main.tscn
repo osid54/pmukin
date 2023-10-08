@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=10 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://cawf1strshquc" path="res://src/sprites/other/background.png" id="1_pwavv"]
@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bq5gifmxnr2gb" path="res://actors/characters/enemyController.tscn" id="6_n0c4a"]
 [ext_resource type="PackedScene" uid="uid://ohu6sxhfpkve" path="res://actors/characters/crow.tscn" id="7_wyjx3"]
 [ext_resource type="PackedScene" uid="uid://bmgx8um1prcri" path="res://actors/objects/sign.tscn" id="8_jswxk"]
+
+[sub_resource type="Curve2D" id="Curve2D_s86mj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -626, 17, 0, 0, 0, 0, -430, 0, 0, 0, 0, 0, -233, -96, 0, 0, 0, 0, -84, -196, 0, 0, 0, 0, 95, -125, 0, 0, 0, 0, 252, -8)
+}
+point_count = 6
 
 [node name="main" type="Node2D"]
 
@@ -63,6 +69,18 @@ position = Vector2(-1140, -59)
 [node name="sign" parent="." instance=ExtResource("8_jswxk")]
 position = Vector2(-875, 335)
 
-[node name="shroom" parent="." instance=ExtResource("1_6iywo")]
-position = Vector2(-1351, 309)
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-1167, 416)
+curve = SubResource("Curve2D_s86mj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(252, -8)
+rotation = -0.0544209
+progress = 983.696
+rotates = false
+loop = false
+
+[node name="shroom" parent="Path2D/PathFollow2D" instance=ExtResource("1_6iywo")]
+position = Vector2(0, -64)
+rotation = 0.0544209
 speed = 500

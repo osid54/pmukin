@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var speed := 300
+@export var speed := 5
 
 func _ready():
 	Autoload.heldChanged.connect(changeObj)
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		play("walk")
 	else:
 		play("idle")
-	position.x += direction * speed * delta
+	get_parent().progress += direction*speed*delta
 
 func interact():
 	var areas = $Area2D.get_overlapping_areas()
