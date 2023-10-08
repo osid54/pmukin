@@ -1,3 +1,5 @@
+Button
+VBoxContainer
 Sprite2D
 AnimatedSprite2D
 Node2D
@@ -10,4 +12,3 @@ CollisionShape2D
 Area2D
 GPUParticles2D
 Timer
-Button
