@@ -20,7 +20,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
-		EnemyController.spawnEnemies([0,1,0,1,0,1,1,1,0,1])
+		EnemyController.spawnEnemies([0,1,2,1,0,3,1,2,0,1])
 
 func _on_timer_timeout():
 	emit_signal("timeTick") 

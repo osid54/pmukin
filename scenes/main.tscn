@@ -35,16 +35,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.270588, 0.34902, 1)
 
-[node name="box" parent="." instance=ExtResource("2_v7jxc")]
-position = Vector2(-1554, 0)
-
-[node name="shroom" parent="." instance=ExtResource("1_6iywo")]
-speed = 500
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
-
 [node name="paths" type="Node2D" parent="."]
+z_index = -3
 
 [node name="pathTile" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(243, 778)
@@ -60,5 +52,14 @@ position = Vector2(1650, 864)
 
 [node name="pathTile5" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(1284, 766)
+
+[node name="box" parent="." instance=ExtResource("2_v7jxc")]
+position = Vector2(-1554, 0)
+
+[node name="shroom" parent="." instance=ExtResource("1_6iywo")]
+speed = 500
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]

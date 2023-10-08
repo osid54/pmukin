@@ -1,12 +1,12 @@
 extends Node
 
 var enemyPath = []
-var tilePos = [Vector2(243, 778), 
-				Vector2(576, 879), 
-				Vector2(904, 724), 
-				Vector2(1284, 766), 
-				Vector2(1650, 864),
-				Vector2(2084,887)]
+var tilePos = [Vector2(243, 842), 
+				Vector2(576, 943), 
+				Vector2(904, 788), 
+				Vector2(1284, 830), 
+				Vector2(1650, 928),
+				Vector2(2084,935)]
 				
 var enemies := [null,
 	preload("res://actors/characters/enemyShroom.tscn"),
@@ -39,7 +39,6 @@ func spawnEnemies(path: Array):
 		if enemyNum != 0:
 			var e = enemies[enemyNum].instantiate()
 			e.enemyType = enemyNum
-			e.setFrames()
 			add_child(e)
 			enemyPath.append(e)
 		else:

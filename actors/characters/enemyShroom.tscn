@@ -5,5 +5,5 @@
 
 [node name="enemyShroom" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_sd71y")
-animation = &"idle"
+animation = &"mushSwalk"
 script = ExtResource("7_ow6fm")
