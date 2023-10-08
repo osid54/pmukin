@@ -5,11 +5,12 @@ var locations = [.4,.5,.61,.73,.84,1]
 func _ready():
 	Autoload.pumpThrown.connect(go)
 
-func go():
+func go(targ: Array, dmg: Array):
+	var end = locations[targ[-1]]
 	get_parent().progress_ratio = 0
 	texture = load("res://src/sprites/plants/"+Autoload.heldObject+".png")
-	for i in 1000:
+	for i in end*1000:
 		get_parent().progress_ratio += .001
 		rotate(TAU/100)
-		await get_tree().create_timer(.01).timeout
+		await get_tree().create_timer(.005).timeout
 	texture = null

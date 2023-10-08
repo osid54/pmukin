@@ -52,21 +52,31 @@ func spawnEnemies(path: Array):
 				enemyPath[i].position = tilePos[5]
 		
 func dmgEnemies(pType: String):
+	var targets = []
+	var dmg = []
 	match pType:
 		"pumpS":
 			for i in 5:
 				if enemyPath[i] != null:
-					enemyPath[i].hit(1)
+					targets.append(i)
+					dmg.append(1)
+					break
+				targets.append(5)
 		"pumpM":
 			for i in 2:
 				if enemyPath[i] != null:
-					enemyPath[i].hit(2)
+					targets.append(i)
+					dmg.append(2)
 		"pumpL":
+			var gonnaBreak = false
 			for i in 5:
 				if enemyPath[i] != null:
-					var gonnaBreak = false
 					if enemyPath[i].enemyType == 3:
 						gonnaBreak = true
-					enemyPath[i].hit(3)
+					targets.append(i)
+					dmg.append(3)
 					if gonnaBreak:
 						break
+			if !gonnaBreak:
+				targets.append(5)
+	Autoload.throwPumpkin(targets,dmg)

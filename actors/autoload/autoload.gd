@@ -2,7 +2,7 @@ extends Node
 
 signal timeTick
 
-signal pumpThrown
+signal pumpThrown(targets,damage)
 
 signal heldChanged()
 var heldObject = "":
@@ -16,13 +16,11 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("spawn"):
 		EnemyController.spawnEnemies([0,1,2,1,0,3,1,2,0,1])
 
 func _on_timer_timeout():
 	emit_signal("timeTick") 
 
-func throwPumpkin():
-	var pump = heldObject
-	
-	pumpThrown.emit()
+func throwPumpkin(targ: Array, dmg: Array):
+	pumpThrown.emit(targ,dmg)
