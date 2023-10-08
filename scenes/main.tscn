@@ -3,12 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://coi6w8oqva0td" path="res://src/sprites/other/floor.png" id="1_ok0ss"]
 [ext_resource type="PackedScene" uid="uid://dixfnvavyadkg" path="res://actors/plants/box.tscn" id="2_v7jxc"]
-[ext_resource type="PackedScene" uid="uid://r2o7l065btfh" path="res://actors/plants/wateringCan.tscn" id="3_vrj7q"]
 [ext_resource type="PackedScene" uid="uid://bsj6ynm40wq0a" path="res://actors/objects/pathTile.tscn" id="5_w6kf5"]
+[ext_resource type="PackedScene" uid="uid://bq5gifmxnr2gb" path="res://actors/characters/enemyController.tscn" id="6_n0c4a"]
 
 [node name="main" type="Node2D"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -9
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,26 +38,27 @@ color = Color(0.2, 0.270588, 0.34902, 1)
 [node name="box" parent="." instance=ExtResource("2_v7jxc")]
 position = Vector2(-1554, 0)
 
-[node name="can" parent="." instance=ExtResource("3_vrj7q")]
-position = Vector2(-1219, 64)
-
 [node name="shroom" parent="." instance=ExtResource("1_6iywo")]
 speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
-[node name="pathTile" parent="." instance=ExtResource("5_w6kf5")]
+[node name="paths" type="Node2D" parent="."]
+
+[node name="pathTile" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(243, 778)
 
-[node name="pathTile2" parent="." instance=ExtResource("5_w6kf5")]
+[node name="pathTile2" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(576, 879)
 
-[node name="pathTile3" parent="." instance=ExtResource("5_w6kf5")]
+[node name="pathTile3" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(904, 724)
 
-[node name="pathTile4" parent="." instance=ExtResource("5_w6kf5")]
+[node name="pathTile4" parent="paths" instance=ExtResource("5_w6kf5")]
+position = Vector2(1650, 864)
+
+[node name="pathTile5" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(1284, 766)
 
-[node name="pathTile5" parent="." instance=ExtResource("5_w6kf5")]
-position = Vector2(1650, 864)
+[node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]

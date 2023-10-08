@@ -11,3 +11,5 @@ res://actors/plants/wateringCan.gd
 res://actors/plants/box.gd
 res://actors/objects/pathTile.tscn
 res://actors/objects/pathTile.gd
+res://actors/autoload/autoload.gd
+res://actors/characters/enemyController.gd

@@ -18,6 +18,7 @@ config/icon="res://src/sprites/plants/pumpS.png"
 [autoload]
 
 Autoload="*res://actors/autoload/autoload.tscn"
+EnemyController="*res://actors/characters/enemyController.tscn"
 
 [display]
 
