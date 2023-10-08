@@ -1,11 +1,2 @@
-res://scenes/main.tscn
-res://actors/objects/pathTile.tscn
-res://actors/characters/mainShroom.tscn
-res://actors/autoload/autoload.tscn
-res://actors/characters/enemyController.tscn
-res://actors/characters/enemyShroom.tscn
-res://actors/characters/crow.tscn
-res://actors/characters/crow.gd
-res://actors/objects/sign.tscn
-res://actors/objects/sign.gd
-res://actors/characters/mainShroom.gd
+res://scenes/menu.tscn
+res://scenes/menu.gd
