@@ -26,4 +26,4 @@ func go(targ: Array, dmg: Array):
 				targ[j] = -1
 		await get_tree().create_timer(.005).timeout
 	texture = null
-	Autoload.passTime()
+	#Autoload.passTime()

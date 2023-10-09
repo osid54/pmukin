@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dif0vg8ea3chf"]
+[gd_scene load_steps=2 format=3 uid="uid://dif0vg8ea3chf"]
 
-[ext_resource type="Texture2D" uid="uid://bpliqys58t8f3" path="res://src/sprites/plants/plantS.png" id="1_p3n26"]
 [ext_resource type="Script" path="res://actors/plants/plant.gd" id="2_26ae0"]
 
 [node name="Plant" type="Sprite2D"]
-texture = ExtResource("1_p3n26")
 script = ExtResource("2_26ae0")

@@ -17,16 +17,15 @@ var particles := preload("res://actors/effects/particles.tscn")
 
 func _ready():
 	Autoload.timeTick.connect(timerUp)
-	visible = false
+	particleSpawn()
 
 func _process(_delta):
 	pass
 
 func timerUp():	
 	if growthLevel >= plantType+2:
+		Autoload.timeTick.disconnect(timerUp)
 		return
-	if growthLevel == 0:
-		visible = true
 	if growthLevel < plantType+1:
 		texture = growth[growthLevel]
 	elif growthLevel == plantType+1:

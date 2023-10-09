@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qmcm2s2tqy1p"]
+[gd_scene load_steps=6 format=3 uid="uid://qmcm2s2tqy1p"]
 
 [ext_resource type="Texture2D" uid="uid://mpcu1qivbhth" path="res://src/sprites/other/seedBag.png" id="1_bhbc0"]
 [ext_resource type="Script" path="res://actors/objects/seedBag.gd" id="2_ddcqs"]
 [ext_resource type="PackedScene" uid="uid://b3q8ojpfkkddj" path="res://actors/effects/pointer.tscn" id="3_l7kwc"]
+[ext_resource type="Texture2D" uid="uid://b3lwi4nvuam7g" path="res://src/sprites/plants/seedOptions.png" id="4_0pre4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xd60v"]
 radius = 60.0
@@ -23,6 +24,17 @@ shape = SubResource("CapsuleShape2D_xd60v")
 visible = false
 position = Vector2(0, -136)
 col = "bag"
+
+[node name="SeedOptions" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -227)
+texture = ExtResource("4_0pre4")
+
+[node name="choicePointer" parent="." instance=ExtResource("3_l7kwc")]
+visible = false
+position = Vector2(98, -241)
+rotation = 1.5708
+col = "choice"
 
 [connection signal="area_entered" from="Area2D" to="." method="areaEntered"]
 [connection signal="area_exited" from="Area2D" to="." method="areaExited"]

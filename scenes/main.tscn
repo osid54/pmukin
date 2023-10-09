@@ -83,6 +83,7 @@ position = Vector2(-1076, -46)
 position = Vector2(-875, 335)
 
 [node name="heart" parent="." instance=ExtResource("11_hw7ps")]
+z_index = -2
 position = Vector2(-1228, 738)
 
 [node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
@@ -92,7 +93,7 @@ position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="shroomPath"]
-position = Vector2(94.5559, -159.801)
+position = Vector2(94.5557, -159.802)
 rotation = -0.0544209
 progress = 781.898
 rotates = false
