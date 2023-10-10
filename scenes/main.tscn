@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=19 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://biuw718xc5ukc" path="res://src/sprites/other/sky.png" id="1_yc1m3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bmgx8um1prcri" path="res://actors/objects/sign.tscn" id="8_jswxk"]
 [ext_resource type="PackedScene" uid="uid://qmcm2s2tqy1p" path="res://actors/objects/seedBag.tscn" id="9_i31qb"]
 [ext_resource type="PackedScene" uid="uid://d276qxcp1i6aq" path="res://actors/characters/thrownPump.tscn" id="10_8ks7h"]
+[ext_resource type="PackedScene" uid="uid://cyqhr64so8l06" path="res://actors/characters/decoPlant.tscn" id="10_cc6q0"]
 [ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_maqsa"]
@@ -73,7 +74,7 @@ amount = 20
 process_material = SubResource("ParticleProcessMaterial_6w1ge")
 texture = ExtResource("2_ji7m1")
 lifetime = 90.0
-preprocess = 30.0
+preprocess = 90.0
 visibility_rect = Rect2(-100, -100, 2000, 200)
 
 [node name="cutout" type="TextureRect" parent="."]
@@ -110,27 +111,50 @@ position = Vector2(1650, 864)
 [node name="pathTile5" parent="paths" instance=ExtResource("5_w6kf5")]
 position = Vector2(1284, 766)
 
-[node name="box" parent="." instance=ExtResource("2_v7jxc")]
+[node name="root stuff" type="Node2D" parent="."]
+
+[node name="box" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1815, 267)
 
-[node name="box2" parent="." instance=ExtResource("2_v7jxc")]
+[node name="box2" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1609, 230)
 
-[node name="box3" parent="." instance=ExtResource("2_v7jxc")]
+[node name="box3" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1424, 137)
 
-[node name="bag" parent="." instance=ExtResource("9_i31qb")]
+[node name="bag" parent="root stuff" instance=ExtResource("9_i31qb")]
 position = Vector2(-1244, 120)
 
-[node name="BirdPerch" type="Sprite2D" parent="."]
+[node name="BirdPerch" type="Sprite2D" parent="root stuff"]
 position = Vector2(-1076, 53)
 texture = ExtResource("6_jlbh1")
 
-[node name="crow" parent="." instance=ExtResource("7_wyjx3")]
+[node name="crow" parent="root stuff" instance=ExtResource("7_wyjx3")]
 position = Vector2(-1076, -46)
 
-[node name="sign" parent="." instance=ExtResource("8_jswxk")]
+[node name="sign" parent="root stuff" instance=ExtResource("8_jswxk")]
 position = Vector2(-875, 335)
+
+[node name="decoPlants" type="Node2D" parent="."]
+z_index = -3
+
+[node name="decoPlant" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-472, 564)
+
+[node name="decoPlant2" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-847, 562)
+
+[node name="decoPlant3" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1521, 248)
+
+[node name="decoPlant4" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1841, 492)
+
+[node name="decoPlant5" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1427, 519)
+
+[node name="decoPlant6" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-985, 132)
 
 [node name="heart" parent="." instance=ExtResource("11_hw7ps")]
 z_index = -2

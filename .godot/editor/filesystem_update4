@@ -12,3 +12,5 @@ res://actors/objects/heart.tscn
 res://actors/plants/plant.tscn
 res://src/themes/button.tres
 res://actors/characters/enemyController.gd
+res://actors/characters/decoPlant.tscn
+res://actors/characters/decoPlant.gd
