@@ -47,9 +47,7 @@ animations = [{
 
 [node name="decoPlant" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ojj2a")
-animation = &"squish"
-frame = 1
-frame_progress = 0.343922
+animation = &"idle"
 script = ExtResource("7_mkxgs")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 func _ready():
+	flip_h = randi_range(0,1)
 	play("idle")
 	$Timer.wait_time = randf_range(1,10)
 	$Timer.start()

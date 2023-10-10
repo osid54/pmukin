@@ -18,9 +18,9 @@ func go(targ: Array, dmg: Array):
 			if get_parent().progress_ratio >= locations[l]:
 				pos = l
 		for j in targ.size():
-			#if targ[j] != -1:
-				#print("t: ",targ[j]," p: ",pos)
-			if pos == targ[j]:
+			if targ[j] != -1:
+				print("t: ",targ[j]," p: ",pos)
+			if pos == targ[j] and pos != 5:
 				EnemyController.enemyPath[pos].hit(dmg[j])
 				print("did damage ",dmg[j])
 				targ[j] = -1

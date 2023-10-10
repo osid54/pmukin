@@ -1,5 +1,6 @@
-res://scenes/menu.tscn
 res://scenes/main.tscn
+res://src/themes/button.tres
+res://scenes/menu.tscn
 res://actors/characters/mainShroom.tscn
 res://actors/objects/seedBag.tscn
 res://actors/effects/pointer.tscn
@@ -10,7 +11,13 @@ res://actors/characters/enemyShroom.tscn
 res://actors/autoload/autoload.tscn
 res://actors/objects/heart.tscn
 res://actors/plants/plant.tscn
-res://src/themes/button.tres
-res://actors/characters/enemyController.gd
 res://actors/characters/decoPlant.tscn
+res://actors/characters/enemyController.gd
+res://actors/characters/thrownPump.gd
 res://actors/characters/decoPlant.gd
+res://speech.gd
+res://actors/effects/speechImage.tscn
+res://actors/effects/speechImage.gd
+res://actors/effects/speech.tscn
+res://actors/characters/crow.tscn
+res://actors/effects/speech.gd

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdq1c2eq037dg"]
+
+[ext_resource type="Texture2D" uid="uid://dbj1p20s1rmo4" path="res://src/sprites/speech/speechT.png" id="1_862lr"]
+[ext_resource type="Script" path="res://actors/effects/speechImage.gd" id="1_r24cg"]
+
+[node name="speechImage" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_862lr")
+stretch_mode = 3
+script = ExtResource("1_r24cg")

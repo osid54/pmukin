@@ -1,8 +1,15 @@
+Panel
+VSeparator
+HBoxContainer
+MarginContainer
+Container
+TextureRect
+NinePatchRect
+Control
 Node2D
 Node
 Timer
 AnimatedSprite2D
-TextureRect
 HSeparator
 Label
 GPUParticles2D

@@ -142,16 +142,26 @@ z_index = -3
 position = Vector2(-472, 564)
 
 [node name="decoPlant2" parent="decoPlants" instance=ExtResource("10_cc6q0")]
-position = Vector2(-847, 562)
+position = Vector2(-864, 579)
+
+[node name="decoPlant7" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1042, 820)
+
+[node name="decoPlant11" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1377, 778)
+
+[node name="decoPlant9" parent="decoPlants" instance=ExtResource("10_cc6q0")]
+position = Vector2(-1699, 885)
 
 [node name="decoPlant3" parent="decoPlants" instance=ExtResource("10_cc6q0")]
 position = Vector2(-1521, 248)
 
 [node name="decoPlant4" parent="decoPlants" instance=ExtResource("10_cc6q0")]
-position = Vector2(-1841, 492)
+z_index = 10
+position = Vector2(-1883, 428)
 
 [node name="decoPlant5" parent="decoPlants" instance=ExtResource("10_cc6q0")]
-position = Vector2(-1427, 519)
+position = Vector2(-1408, 511)
 
 [node name="decoPlant6" parent="decoPlants" instance=ExtResource("10_cc6q0")]
 position = Vector2(-985, 132)
@@ -159,6 +169,66 @@ position = Vector2(-985, 132)
 [node name="heart" parent="." instance=ExtResource("11_hw7ps")]
 z_index = -2
 position = Vector2(-1228, 738)
+
+[node name="decoPlantsFront" type="Node2D" parent="."]
+position = Vector2(-1228, 738)
+
+[node name="decoPlant11" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-159, 215)
+
+[node name="decoPlant12" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-203, 120)
+
+[node name="decoPlant13" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(42, 208)
+
+[node name="decoPlant14" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(162, 210)
+
+[node name="decoPlant15" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(230, 163)
+
+[node name="decoPlant16" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-268, 246)
+
+[node name="decoPlant17" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-476, 235)
+
+[node name="decoPlant18" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-616, 178)
+
+[node name="decoPlant19" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(365, 161)
+
+[node name="decoPlant20" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(467, 225)
+
+[node name="decoPlant21" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(291, 227)
+
+[node name="decoPlant22" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(569, 104)
+
+[node name="decoPlant23" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(622, 216)
+
+[node name="decoPlant24" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(726, 135)
+
+[node name="decoPlant25" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-382, 52)
+
+[node name="decoPlant26" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-554, 77)
+
+[node name="decoPlant27" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(300, 54)
+
+[node name="decoPlant8" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-285, 103)
+
+[node name="decoPlant10" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
+position = Vector2(-354, 189)
 
 [node name="enemyController" parent="." instance=ExtResource("6_n0c4a")]
 
