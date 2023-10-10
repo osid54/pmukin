@@ -1,6 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmtyxviknx1pq"]
+[gd_scene load_steps=8 format=3 uid="uid://bmtyxviknx1pq"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_ei4sv"]
+[ext_resource type="Texture2D" uid="uid://c6c4snl8guxtm" path="res://src/sprites/other/menu2.png" id="2_lpd0s"]
+[ext_resource type="Texture2D" uid="uid://dgxdaovh8koi6" path="res://src/sprites/effects/particleSpriteSheet.png" id="2_p8p8o"]
+[ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="3_02t37"]
+[ext_resource type="FontFile" uid="uid://brflq0s332adg" path="res://src/sprites/fonts/SunnyspellsRegular-MV9ze.otf" id="5_yxfnn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vdcq6"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_snfvn"]
+emission_shape = 3
+emission_box_extents = Vector3(1000, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 0.5
+scale_max = 0.5
+anim_offset_max = 1.0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,24 +43,79 @@ grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_ei4sv")
 
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lpd0s")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_vdcq6")
+position = Vector2(0, -640)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_snfvn")
+texture = ExtResource("2_p8p8o")
+lifetime = 15.0
+preprocess = 10.0
+visibility_rect = Rect2(-100, 320, 200, 200)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = 72.0
+offset_right = 174.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.960005, 1)
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
-text = "start"
+size_flags_vertical = 3
+theme = ExtResource("3_02t37")
+text = "PLAY"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-text = "credits"
+size_flags_vertical = 3
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "quit"
+size_flags_vertical = 3
+theme = ExtResource("3_02t37")
+text = "QUIT
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -946.5
+offset_top = -390.0
+offset_right = 946.5
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0.466667, 0.262745, 1)
+theme_override_colors/font_outline_color = Color(0.419608, 0.211765, 0.211765, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_yxfnn")
+theme_override_font_sizes/font_size = 350
+text = "PUMPKIN PITCH"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

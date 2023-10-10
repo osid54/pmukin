@@ -6,7 +6,7 @@ var tilePos = [Vector2(243, 842),
 				Vector2(904, 788), 
 				Vector2(1284, 830), 
 				Vector2(1650, 928),
-				Vector2(2084,935)]
+				Vector2(2100,935)]
 				
 var enemies := [null,
 	preload("res://actors/characters/enemyShroom.tscn"),

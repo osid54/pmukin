@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=18 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
-[ext_resource type="Texture2D" uid="uid://cawf1strshquc" path="res://src/sprites/other/background.png" id="1_pwavv"]
+[ext_resource type="Texture2D" uid="uid://biuw718xc5ukc" path="res://src/sprites/other/sky.png" id="1_yc1m3"]
+[ext_resource type="Texture2D" uid="uid://bu16p0qojry85" path="res://src/sprites/effects/cloudSpriteSheet.png" id="2_ji7m1"]
+[ext_resource type="Texture2D" uid="uid://dwmy1jgkvuoj7" path="res://src/sprites/other/groundCutOut.png" id="2_mew1r"]
 [ext_resource type="PackedScene" uid="uid://dixfnvavyadkg" path="res://actors/plants/box.tscn" id="2_v7jxc"]
 [ext_resource type="PackedScene" uid="uid://bsj6ynm40wq0a" path="res://actors/objects/pathTile.tscn" id="5_w6kf5"]
 [ext_resource type="Texture2D" uid="uid://c158cocvfvoqj" path="res://src/sprites/bird/birdPerch.png" id="6_jlbh1"]
@@ -11,6 +13,27 @@
 [ext_resource type="PackedScene" uid="uid://qmcm2s2tqy1p" path="res://actors/objects/seedBag.tscn" id="9_i31qb"]
 [ext_resource type="PackedScene" uid="uid://d276qxcp1i6aq" path="res://actors/characters/thrownPump.tscn" id="10_8ks7h"]
 [ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_maqsa"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6w1ge"]
+emission_shape = 3
+emission_box_extents = Vector3(0, 540, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -15.0
+angle_max = 15.0
+scale_min = 0.5
+anim_offset_max = 1.0
 
 [sub_resource type="Curve2D" id="Curve2D_s86mj"]
 _data = {
@@ -26,7 +49,34 @@ point_count = 9
 
 [node name="main" type="Node2D"]
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="sky" type="TextureRect" parent="."]
+z_index = -11
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yc1m3")
+stretch_mode = 5
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+z_index = -10
+material = SubResource("CanvasItemMaterial_maqsa")
+position = Vector2(-2200, -540)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_6w1ge")
+texture = ExtResource("2_ji7m1")
+lifetime = 90.0
+preprocess = 30.0
+visibility_rect = Rect2(-100, -100, 2000, 200)
+
+[node name="cutout" type="TextureRect" parent="."]
 z_index = -9
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,7 +89,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_pwavv")
+texture = ExtResource("2_mew1r")
 stretch_mode = 5
 
 [node name="paths" type="Node2D" parent="."]

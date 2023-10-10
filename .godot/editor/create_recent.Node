@@ -1,4 +1,8 @@
+TextureRect
+HSeparator
 Label
+GPUParticles2D
+Timer
 Area2D
 Sprite2D
 Node2D
@@ -9,9 +13,6 @@ CollisionShape2D
 Button
 VBoxContainer
 Node
-TextureRect
 CanvasLayer
 ColorRect
 Camera2D
-GPUParticles2D
-Timer

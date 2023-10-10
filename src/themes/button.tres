@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://g5ooxdwj4x53"]
+
+[ext_resource type="FontFile" uid="uid://brflq0s332adg" path="res://src/sprites/fonts/SunnyspellsRegular-MV9ze.otf" id="1_pwulv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly35q"]
+bg_color = Color(0.788235, 0.466667, 0.262745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.37, 0.185, 0.185, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2abe"]
+bg_color = Color(0.788235, 0.466667, 0.262745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.419608, 0.211765, 0.211765, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[resource]
+Button/colors/font_color = Color(0.419608, 0.211765, 0.211765, 1)
+Button/colors/font_hover_color = Color(0.37, 0.185, 0.185, 1)
+Button/colors/font_pressed_color = Color(0.419608, 0.211765, 0.211765, 1)
+Button/font_sizes/font_size = 150
+Button/fonts/font = ExtResource("1_pwulv")
+Button/styles/hover = SubResource("StyleBoxFlat_ly35q")
+Button/styles/normal = SubResource("StyleBoxFlat_w2abe")
+Button/styles/pressed = SubResource("StyleBoxFlat_w2abe")
