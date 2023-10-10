@@ -10,3 +10,7 @@ res://actors/effects/speechImage.tscn
 res://actors/characters/crow.tscn
 res://scenes/Camera.gd
 res://actors/characters/scalingCamera.tscn
+res://actors/characters/decoPlant.tscn
+res://actors/characters/decoPlant.gd
+res://actors/characters/enemyController.tscn
+res://actors/characters/enemyController.gd

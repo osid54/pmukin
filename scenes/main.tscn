@@ -172,6 +172,7 @@ z_index = -2
 position = Vector2(-1228, 738)
 
 [node name="decoPlantsFront" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-1228, 738)
 
 [node name="decoPlant11" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]

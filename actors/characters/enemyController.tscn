@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" path="res://actors/characters/enemyController.gd" id="1_axotx"]
 
-[node name="enemyController" type="Node"]
+[node name="enemyController" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_axotx")

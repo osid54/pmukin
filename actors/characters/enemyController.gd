@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var enemyPath = []
 var tilePos = [Vector2(243, 842), 

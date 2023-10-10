@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyqhr64so8l06"]
+[gd_scene load_steps=12 format=3 uid="uid://cyqhr64so8l06"]
 
+[ext_resource type="Texture2D" uid="uid://dnvt8l87qge7h" path="res://src/sprites/deco/decoDie1.png" id="1_1x5un"]
 [ext_resource type="Texture2D" uid="uid://dcdwv2qrcdsj3" path="res://src/sprites/deco/decoIdle1.png" id="1_bui1g"]
 [ext_resource type="Texture2D" uid="uid://bk358ixtsldpd" path="res://src/sprites/deco/decoIdle2.png" id="2_48dyf"]
+[ext_resource type="Texture2D" uid="uid://d1spehecc2r57" path="res://src/sprites/deco/decoDie2.png" id="2_was7o"]
 [ext_resource type="Texture2D" uid="uid://cyqhnm1jxqpeo" path="res://src/sprites/deco/decoIdle3.png" id="3_b6n4y"]
+[ext_resource type="Texture2D" uid="uid://bvvg1xwyefwud" path="res://src/sprites/deco/decoDie3.png" id="3_vcmpv"]
 [ext_resource type="Texture2D" uid="uid://jkun0h5g0iue" path="res://src/sprites/deco/decoSquish1.png" id="4_cac14"]
 [ext_resource type="Texture2D" uid="uid://by3ha6c5jviue" path="res://src/sprites/deco/decoSquish2.png" id="5_cbnnv"]
 [ext_resource type="Texture2D" uid="uid://d1j27o0rd101" path="res://src/sprites/deco/decoSquish3.png" id="6_ulptj"]
@@ -10,6 +13,20 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojj2a"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1x5un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_was7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vcmpv")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_bui1g")
@@ -46,11 +63,25 @@ animations = [{
 }]
 
 [node name="decoPlant" type="AnimatedSprite2D"]
+clip_children = 2
 sprite_frames = SubResource("SpriteFrames_ojj2a")
-animation = &"idle"
+animation = &"die"
 script = ExtResource("7_mkxgs")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.207843, 0.388235, 0.164706, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
