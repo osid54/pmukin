@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmtyxviknx1pq"]
+[gd_scene load_steps=9 format=3 uid="uid://bmtyxviknx1pq"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_ei4sv"]
 [ext_resource type="Texture2D" uid="uid://c6c4snl8guxtm" path="res://src/sprites/other/menu2.png" id="2_lpd0s"]
 [ext_resource type="Texture2D" uid="uid://dgxdaovh8koi6" path="res://src/sprites/effects/particleSpriteSheet.png" id="2_p8p8o"]
 [ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="3_02t37"]
 [ext_resource type="FontFile" uid="uid://brflq0s332adg" path="res://src/sprites/fonts/SunnyspellsRegular-MV9ze.otf" id="5_yxfnn"]
+[ext_resource type="PackedScene" uid="uid://daoi2m671hapj" path="res://actors/characters/scalingCamera.tscn" id="6_8vs25"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vdcq6"]
 particles_animation = true
@@ -116,6 +117,9 @@ theme_override_font_sizes/font_size = 350
 text = "PUMPKIN PITCH"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="camera" parent="." instance=ExtResource("6_8vs25")]
+neededSize = Vector2(1920, 1080)
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
