@@ -19,8 +19,17 @@ var level := [
 			[1,[0,0,1],[0,0,0,0,3]],
 			[2,[2,0,0],[0,0,2,0,0]],
 			[3,[3,0,0],[0,0,3,0,0]],
+			[1,[2,0,0],[0,0,1,0,1]],
 			[2,[1,1,0],[0,0,0,3,0]],
-			[1,[2,1,0],[0,0,0,1,1,0,0,2]]
+			[1,[0,1,0],[0,0,0,2,2]],
+			[1,[0,0,1],[0,0,0,0,1,1,1,1,3]],
+			[2,[1,0,1],[0,0,0,0,3,1]],
+			[2,[1,1,1],[0,0,0,0,3,2,0,1]],
+			[1,[2,1,0],[0,0,0,1,1,0,0,2]],
+			[2,[1,1,0],[0,0,0,1,2,1]],
+			[2,[1,1,0],[0,0,0,2,3]],
+			[2,[0,2,0],[0,0,0,1,3,2]],
+			[2,[3,0,1],[0,0,0,0,3,0,0,3]]
 			]
 
 var heldObject = "":
@@ -40,6 +49,7 @@ func _ready():
 	loadLevel.emit()
 
 func setLevel():
+	heldObject = ""
 	$gameover.visible = false
 	if levelNum == level.size():
 		spawnRandom()
@@ -52,6 +62,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("time"):
 		passTime()
 		tickable = false
+	if Input.is_action_just_pressed("reset"):
+		loadLevel.emit()
 
 func spawnRandom():
 		var spawnPath = [0,0,0,0]

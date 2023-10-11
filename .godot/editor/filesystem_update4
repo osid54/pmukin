@@ -1,5 +1,13 @@
-res://scenes/quitButton.tscn
-res://src/themes/button.tres
-res://scenes/main.tscn
-res://scenes/resetButton.tscn
 res://scenes/menu.tscn
+res://src/themes/button.tres
+res://actors/autoload/autoload.gd
+res://scenes/main.tscn
+res://scenes/quitButton.tscn
+res://scenes/resetButton.tscn
+res://actors/characters/thrownPump.gd
+res://actors/characters/enemyShroom.gd
+res://actors/characters/enemyController.gd
+res://actors/effects/speech.gd
+res://actors/effects/hint.gd
+res://actors/plants/box.gd
+res://actors/autoload/autoload.tscn

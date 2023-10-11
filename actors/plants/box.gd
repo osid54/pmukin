@@ -27,7 +27,7 @@ func reset():
 	inUse = false
 	$cropPointer.visible = false
 	$plantPointer.visible = false
-	if boxNum <= Autoload.level[Autoload.levelNum][0]:
+	if  Autoload.levelNum >= Autoload.level.size() or boxNum <= Autoload.level[Autoload.levelNum][0]:
 		visible = true
 	else:
 		visible = false

@@ -16,9 +16,9 @@ func go(targ: Array, dmg: Array):
 	var end = locations[targ[-1]]
 	get_parent().progress_ratio = 0
 	texture = load("res://src/sprites/plants/"+Autoload.heldObject+".png")
-	for i in end*1001:
-		get_parent().progress_ratio += .001
-		rotate(TAU/100)
+	for i in end*251:
+		get_parent().progress_ratio += .004
+		rotate(TAU/50)
 		
 		var pos
 		for l in locations.size():

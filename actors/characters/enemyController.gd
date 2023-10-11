@@ -12,6 +12,8 @@ var enemies := [null,
 	preload("res://actors/characters/enemyShroom.tscn"),
 	preload("res://actors/characters/enemyShroom.tscn"),
 	preload("res://actors/characters/enemyShroom.tscn")]
+	
+signal enemyKilled
 
 func _ready():
 	Autoload.timeTick.connect(moveEnemies)
@@ -94,5 +96,6 @@ func checkEnd():
 			if enemyPath[i].health <= 0:
 				enemyPath[i].queue_free()
 				enemyPath[i] = null
+				enemyKilled.emit()
 	if enemyPath == [null,null,null,null,null]:
 		Autoload.levelNum += 1

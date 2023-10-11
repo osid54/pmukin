@@ -15,7 +15,7 @@ func walkTo(pos: Vector2):
 	play(frames[enemyType]+"walk")
 	var startPos = position
 	var walkSplit := 100
-	var walkTime := 2 + randf_range(-.5,.5)
+	var walkTime := 1 + randf_range(-.2,.2)
 	for i in range(1,walkSplit+1):
 		position = startPos.lerp(pos,i*1.0/walkSplit)
 		if i == walkSplit:
