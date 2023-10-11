@@ -1,9 +1,5 @@
-res://scenes/main.tscn
-res://src/themes/button.tres
 res://scenes/quitButton.tscn
-res://actors/effects/hint.tscn
-res://actors/effects/speech.tscn
-res://actors/characters/crow.tscn
-res://actors/autoload/autoload.tscn
+res://src/themes/button.tres
+res://scenes/main.tscn
+res://scenes/resetButton.tscn
 res://scenes/menu.tscn
-res://actors/objects/heart.tscn

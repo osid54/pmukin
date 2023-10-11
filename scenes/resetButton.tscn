@@ -4,14 +4,20 @@
 [ext_resource type="Script" path="res://scenes/resetButton.gd" id="2_t5lpq"]
 
 [node name="ResetButton" type="Button"]
-offset_left = 1379.0
-offset_top = -1057.0
-offset_right = 1652.0
-offset_bottom = -926.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -65.5
+offset_right = 136.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 theme = ExtResource("1_kunlr")
-text = "RESET
-"
+text = "RESET"
 script = ExtResource("2_t5lpq")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
