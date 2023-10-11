@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://daoi2m671hapj"]
+
+[ext_resource type="Script" path="res://actors/characters/scalingCamera.gd" id="1_ewabv"]
+
+[node name="camera" type="Camera2D"]
+position = Vector2(0, -3.05176e-05)
+zoom = Vector2(0.285, 0.285)
+script = ExtResource("1_ewabv")
+neededSize = Vector2(3840, 2160)

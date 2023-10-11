@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var enemyPath = []
 var tilePos = [Vector2(243, 842), 
@@ -24,7 +24,7 @@ func moveEnemies():
 				if enemyPath[i] != null:
 					Autoload.dead()
 					await enemyPath[i].walkTo(Vector2(-1228,938))
-					queue_free()
+					enemyPath[i].queue_free()
 			else:
 				tempPath.append(enemyPath[i])
 		enemyPath = tempPath

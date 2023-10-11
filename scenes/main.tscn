@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=20 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://biuw718xc5ukc" path="res://src/sprites/other/sky.png" id="1_yc1m3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d276qxcp1i6aq" path="res://actors/characters/thrownPump.tscn" id="10_8ks7h"]
 [ext_resource type="PackedScene" uid="uid://cyqhr64so8l06" path="res://actors/characters/decoPlant.tscn" id="10_cc6q0"]
 [ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
+[ext_resource type="PackedScene" uid="uid://daoi2m671hapj" path="res://actors/characters/scalingCamera.tscn" id="15_8vtdp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_maqsa"]
 particles_animation = true
@@ -171,6 +172,7 @@ z_index = -2
 position = Vector2(-1228, 738)
 
 [node name="decoPlantsFront" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-1228, 738)
 
 [node name="decoPlant11" parent="decoPlantsFront" instance=ExtResource("10_cc6q0")]
@@ -261,6 +263,4 @@ loop = false
 
 [node name="thrownPump" parent="pumpPath/PathFollow2D" instance=ExtResource("10_8ks7h")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -3.05176e-05)
-zoom = Vector2(0.5, 0.5)
+[node name="camera" parent="." instance=ExtResource("15_8vtdp")]
