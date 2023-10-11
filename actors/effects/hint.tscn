@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpvtom6svaasm"]
+
+[ext_resource type="Texture2D" uid="uid://bh4m040wlogu3" path="res://src/sprites/hint/hintX.png" id="1_vvn1u"]
+[ext_resource type="Script" path="res://actors/effects/hint.gd" id="2_qqes8"]
+[ext_resource type="Texture2D" uid="uid://e0imw807vnxp" path="res://src/sprites/hint/hintNumbers.png" id="3_d3fb1"]
+
+[node name="hint" type="Sprite2D"]
+texture = ExtResource("1_vvn1u")
+script = ExtResource("2_qqes8")
+
+[node name="numS" type="Sprite2D" parent="."]
+position = Vector2(47, -81)
+texture = ExtResource("3_d3fb1")
+vframes = 6
+frame = 1
+
+[node name="numM" type="Sprite2D" parent="."]
+position = Vector2(47, -25)
+texture = ExtResource("3_d3fb1")
+vframes = 6
+
+[node name="numL" type="Sprite2D" parent="."]
+position = Vector2(47, 34)
+texture = ExtResource("3_d3fb1")
+vframes = 6

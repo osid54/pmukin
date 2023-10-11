@@ -6,7 +6,6 @@ func _ready():
 
 func reset():
 	$HeartInner.modulate = Color8(175,50,51)
-	$Label.visible = false
 
 func change():
 	var original = $HeartInner.modulate
@@ -15,4 +14,3 @@ func change():
 	for i in range(1,length+1):
 		$HeartInner.modulate = original.lerp(Color8(197,76,134),i*1.0/length)
 		await get_tree().create_timer(2.0/length).timeout
-	$Label.visible = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce6ilufyq8jil"]
+
+[ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="1_ihst1"]
+[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="2_557ln"]
+
+[node name="QuitButton" type="Button"]
+offset_left = 1669.0
+offset_top = -1057.0
+offset_right = 1893.0
+offset_bottom = -926.0
+size_flags_vertical = 3
+theme = ExtResource("1_ihst1")
+text = "QUIT
+"
+script = ExtResource("2_557ln")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

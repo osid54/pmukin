@@ -36,6 +36,9 @@ func moveEnemies():
 				enemyPath[i].walkTo(tilePos[i])
 			
 func spawnEnemies(path: Array):
+	for enemy in enemyPath:
+		if enemy != null:
+			enemy.queue_free()
 	enemyPath.clear()
 	for enemyNum in path:
 		if enemyNum != 0:

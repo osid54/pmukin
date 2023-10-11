@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d276qxcp1i6aq"]
+[gd_scene load_steps=3 format=3 uid="uid://d276qxcp1i6aq"]
 
 [ext_resource type="Script" path="res://actors/characters/thrownPump.gd" id="1_g21sn"]
+[ext_resource type="PackedScene" uid="uid://l7imhp33krg8" path="res://actors/effects/pumkinPieces.tscn" id="2_ejfaf"]
 
 [node name="thrownPump" type="Sprite2D"]
 script = ExtResource("1_g21sn")
+pieces = ExtResource("2_ejfaf")

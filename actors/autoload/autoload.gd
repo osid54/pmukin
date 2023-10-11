@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 signal timeTick
 signal pumpThrown(targets,damage)
@@ -35,10 +35,12 @@ var numSeeded := 0
 var tickable := true
 
 func _ready():
+	position = Vector2()
 	loadLevel.connect(setLevel)
-	setLevel()
+	loadLevel.emit()
 
 func setLevel():
+	$gameover.visible = false
 	if levelNum == level.size():
 		spawnRandom()
 	else:
@@ -73,3 +75,4 @@ func passTime():
 
 func dead():
 	died.emit()
+	$gameover.visible = true

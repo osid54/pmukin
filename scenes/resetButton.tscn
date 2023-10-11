@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx1ha3but1xf"]
+
+[ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="1_kunlr"]
+[ext_resource type="Script" path="res://scenes/resetButton.gd" id="2_t5lpq"]
+
+[node name="ResetButton" type="Button"]
+offset_left = 1379.0
+offset_top = -1057.0
+offset_right = 1652.0
+offset_bottom = -926.0
+size_flags_vertical = 3
+theme = ExtResource("1_kunlr")
+text = "RESET
+"
+script = ExtResource("2_t5lpq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

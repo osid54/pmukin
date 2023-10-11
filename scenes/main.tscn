@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cyqhr64so8l06" path="res://actors/characters/decoPlant.tscn" id="10_cc6q0"]
 [ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
 [ext_resource type="PackedScene" uid="uid://daoi2m671hapj" path="res://actors/characters/scalingCamera.tscn" id="15_8vtdp"]
-[ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="16_53dex"]
-[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="17_nh026"]
+[ext_resource type="PackedScene" uid="uid://ce6ilufyq8jil" path="res://scenes/quitButton.tscn" id="16_7w6nv"]
+[ext_resource type="PackedScene" uid="uid://dx1ha3but1xf" path="res://scenes/resetButton.tscn" id="17_4ffy4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_maqsa"]
 particles_animation = true
@@ -244,7 +244,7 @@ position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="shroomPath"]
-position = Vector2(139.254, -135.572)
+position = Vector2(139.254, -135.573)
 rotation = -0.0544209
 progress = 832.767
 rotates = false
@@ -270,15 +270,6 @@ loop = false
 
 [node name="camera" parent="." instance=ExtResource("15_8vtdp")]
 
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 1669.0
-offset_top = -1057.0
-offset_right = 1893.0
-offset_bottom = -926.0
-size_flags_vertical = 3
-theme = ExtResource("16_53dex")
-text = "QUIT
-"
-script = ExtResource("17_nh026")
+[node name="QuitButton" parent="." instance=ExtResource("16_7w6nv")]
 
-[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
+[node name="ResetButton" parent="." instance=ExtResource("17_4ffy4")]

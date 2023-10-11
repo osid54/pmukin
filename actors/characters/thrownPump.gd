@@ -2,6 +2,8 @@ extends Sprite2D
 
 var locations = [.4,.5,.61,.73,.84,1]
 
+@export var pieces : PackedScene
+
 func _ready():
 	Autoload.pumpThrown.connect(go)
 	Autoload.loadLevel.connect(reset)
@@ -31,5 +33,9 @@ func go(targ: Array, dmg: Array):
 				targ[j] = -1
 		await get_tree().create_timer(.005).timeout
 	texture = null
+	var p = pieces.instantiate()
+	p.emitting = true
+	p.global_position = global_position
+	get_tree().root.add_child(p)
 	EnemyController.checkEnd()
 	return

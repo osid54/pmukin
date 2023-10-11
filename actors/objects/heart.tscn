@@ -17,12 +17,3 @@ texture = ExtResource("2_pf8iw")
 
 [node name="HeartOutline" type="Sprite2D" parent="."]
 texture = ExtResource("3_82slj")
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -119.0
-offset_top = -627.0
-offset_right = 2749.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 500
-text = "GAME OVER"

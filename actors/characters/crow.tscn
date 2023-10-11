@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ohu6sxhfpkve"]
+[gd_scene load_steps=8 format=3 uid="uid://ohu6sxhfpkve"]
 
 [ext_resource type="Texture2D" uid="uid://rqpuj7mqlhxe" path="res://src/sprites/bird/bird1.png" id="1_nxknf"]
 [ext_resource type="Texture2D" uid="uid://cl327fxrss3c" path="res://src/sprites/bird/bird2.png" id="2_a4iul"]
 [ext_resource type="Texture2D" uid="uid://ci5w56jnk3hgb" path="res://src/sprites/bird/bird3.png" id="3_304os"]
 [ext_resource type="Script" path="res://actors/characters/crow.gd" id="4_pgd5a"]
 [ext_resource type="PackedScene" uid="uid://dipasbmlgo3y4" path="res://actors/effects/speech.tscn" id="5_kyyxg"]
+[ext_resource type="PackedScene" uid="uid://dpvtom6svaasm" path="res://actors/effects/hint.tscn" id="6_vtfrl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5uw3r"]
 animations = [{
@@ -32,4 +33,7 @@ frame_progress = 0.654893
 script = ExtResource("4_pgd5a")
 
 [node name="speech" parent="." instance=ExtResource("5_kyyxg")]
-position = Vector2(29, -68)
+position = Vector2(100, -36)
+
+[node name="hint" parent="." instance=ExtResource("6_vtfrl")]
+position = Vector2(-1, -229)
