@@ -14,3 +14,4 @@ res://actors/characters/decoPlant.tscn
 res://actors/characters/decoPlant.gd
 res://actors/characters/enemyController.tscn
 res://actors/characters/enemyController.gd
+res://actors/effects/speech.gd
