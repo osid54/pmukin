@@ -4,6 +4,7 @@ func interact():
 	if ["pumpS","pumpM","pumpL"].has(Autoload.heldObject):
 		EnemyController.dmgEnemies(Autoload.heldObject)
 		Autoload.heldObject = ""
+		$pointer.visible = false
 
 func areaEntered(_area):
 	if ["pumpS","pumpM","pumpL"].has(Autoload.heldObject):

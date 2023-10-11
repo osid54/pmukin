@@ -116,12 +116,15 @@ position = Vector2(1284, 766)
 
 [node name="box" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1815, 267)
+boxNum = 3
 
 [node name="box2" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1609, 230)
+boxNum = 1
 
 [node name="box3" parent="root stuff" instance=ExtResource("2_v7jxc")]
 position = Vector2(-1424, 137)
+boxNum = 2
 
 [node name="bag" parent="root stuff" instance=ExtResource("9_i31qb")]
 position = Vector2(-1244, 120)
@@ -239,9 +242,9 @@ position = Vector2(-1167, 416)
 curve = SubResource("Curve2D_s86mj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="shroomPath"]
-position = Vector2(94.5557, -159.802)
+position = Vector2(139.254, -135.572)
 rotation = -0.0544209
-progress = 781.898
+progress = 832.767
 rotates = false
 loop = false
 

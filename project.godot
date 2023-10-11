@@ -13,7 +13,7 @@ config_version=5
 config/name="pmukin"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://src/sprites/plants/pumpS.png"
+config/icon="res://src/sprites/icons/iconB.png"
 
 [autoload]
 
@@ -22,8 +22,8 @@ EnemyController="*res://actors/characters/enemyController.tscn"
 
 [display]
 
+window/size/mode=3
 window/size/borderless=true
-window/stretch/mode="canvas_items"
 
 [filesystem]
 

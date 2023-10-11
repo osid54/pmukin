@@ -4,6 +4,11 @@ var locations = [.4,.5,.61,.73,.84,1]
 
 func _ready():
 	Autoload.pumpThrown.connect(go)
+	Autoload.loadLevel.connect(reset)
+	
+func reset():
+	get_parent().progress_ratio = 0
+	texture = null
 
 func go(targ: Array, dmg: Array):
 	var end = locations[targ[-1]]
@@ -18,14 +23,13 @@ func go(targ: Array, dmg: Array):
 			if get_parent().progress_ratio >= locations[l]:
 				pos = l
 		for j in targ.size():
-			if targ[j] != -1:
-				print("t: ",targ[j]," p: ",pos)
+			#if targ[j] != -1:
+				#print("t: ",targ[j]," p: ",pos)
 			if pos == targ[j] and pos != 5:
 				EnemyController.enemyPath[pos].hit(dmg[j])
-				print("did damage ",dmg[j])
+				#print("did damage ",dmg[j])
 				targ[j] = -1
 		await get_tree().create_timer(.005).timeout
 	texture = null
-	if EnemyController.enemyPath == [0,0,0,0,0]:
-		pass
-	#Autoload.passTime()
+	EnemyController.checkEnd()
+	return

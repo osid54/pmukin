@@ -4,6 +4,7 @@ var element = preload("res://actors/effects/speechImage.tscn")
 
 func _ready():
 	Autoload.timeTick.connect(reload)
+	Autoload.loadLevel.connect(reload)
 	reload()
 
 func reload():

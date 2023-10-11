@@ -5,6 +5,14 @@ var seeds = ["seedS", "seedM", "seedL"]
 var choiceLoc = [-307,-258,-192]
 var selected := -1
 
+func _ready():
+	Autoload.loadLevel.connect(reset)
+
+func reset():
+	$bagPointer.visible = false
+	menuOpen = false
+	hideOptions()
+
 func _process(_delta):
 	if menuOpen:
 		if Input.is_action_just_pressed("up"):

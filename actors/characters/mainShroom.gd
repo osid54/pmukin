@@ -4,6 +4,10 @@ extends AnimatedSprite2D
 
 func _ready():
 	Autoload.heldChanged.connect(changeObj)
+	Autoload.loadLevel.connect(reset)
+
+func reset():
+	get_parent().progress_ratio = .83
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):

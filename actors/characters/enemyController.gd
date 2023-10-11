@@ -15,6 +15,7 @@ var enemies := [null,
 
 func _ready():
 	Autoload.timeTick.connect(moveEnemies)
+	#Autoload.loadLevel.connect(reset)
 		
 func moveEnemies():
 	if enemyPath.size() > 0:
@@ -81,5 +82,14 @@ func dmgEnemies(pType: String):
 						break
 			if !gonnaBreak:
 				targets.append(5)
-	print(targets," ",dmg)
+	#print(targets," ",dmg)
 	Autoload.throwPumpkin(targets,dmg)
+	
+func checkEnd():
+	for i in range(enemyPath.size()):
+		if enemyPath[i] != null:
+			if enemyPath[i].health <= 0:
+				enemyPath[i].queue_free()
+				enemyPath[i] = null
+	if enemyPath == [null,null,null,null,null]:
+		Autoload.levelNum += 1

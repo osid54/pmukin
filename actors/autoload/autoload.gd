@@ -14,13 +14,13 @@ var levelNum := 0:
 		loadLevel.emit()
 
 var level := [
-			[[1],[1,0,0],[0,0,0,0,1]],
-			[[1],[0,1,0],[0,0,0,0,0,2]],
-			[[1],[0,0,1],[0,0,0,0,0,0,3]],
-			[[2],[2,0,0],[0,0,0,0,2]],
-			[[3],[3,0,0],[0,0,0,0,3]],
-			[[2],[1,1,0],[0,0,0,0,0,3]],
-			[[1],[2,1,0],[0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,2]]
+			[1,[1,0,0],[0,0,1,0,0]],
+			[1,[0,1,0],[0,0,0,2,0]],
+			[1,[0,0,1],[0,0,0,0,3]],
+			[2,[2,0,0],[0,0,2,0,0]],
+			[3,[3,0,0],[0,0,3,0,0]],
+			[2,[1,1,0],[0,0,0,3,0]],
+			[1,[2,1,0],[0,0,0,1,1,0,0,2]]
 			]
 
 var heldObject = "":
@@ -32,31 +32,43 @@ var heldObject = "":
 
 var numPots := 3
 var numSeeded := 0
+var tickable := true
 
 func _ready():
+	loadLevel.connect(setLevel)
 	EnemyController.spawnEnemies(level[levelNum][2])
 
-#func _process(_delta):
+func setLevel():
+	EnemyController.spawnEnemies(level[levelNum][2])
+	if levelNum == level.size():
+		spawnRandom()
+
+func _process(_delta):
 #	if Input.is_action_just_pressed("spawn"):
 #		spawnRandom()
-#	if Input.is_action_just_pressed("time"):
-#		passTime()
+	if Input.is_action_just_pressed("time"):
+		passTime()
+		tickable = false
 
 func spawnRandom():
 		var spawnPath = [0,0,0,0]
 		for i in 10:
 			spawnPath.append(randi_range(0,3))
-		EnemyController.spawnEnemies(spawnPath)	
+		EnemyController.spawnEnemies(spawnPath)
 
 func _on_timer_timeout():
 	if numPots == numSeeded:
+		tickable = false
 		passTime()
+	else:
+		tickable = true
 
 func throwPumpkin(targ: Array, dmg: Array):
 	pumpThrown.emit(targ,dmg)
 
 func passTime():
 	timeTick.emit()
+	tickable = true
 
 func dead():
 	died.emit()

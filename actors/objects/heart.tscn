@@ -12,7 +12,7 @@ script = ExtResource("1_fe7rp")
 texture = ExtResource("1_m0u5i")
 
 [node name="HeartInner" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.686275, 0.196078, 0.2, 1)
 texture = ExtResource("2_pf8iw")
 
 [node name="HeartOutline" type="Sprite2D" parent="."]

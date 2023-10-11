@@ -26,7 +26,6 @@ func walkTo(pos: Vector2):
 	return
 
 func hit(dmg: int):
-	print("dmg done: ",dmg)
+	#print("dmg done: ",dmg)
 	health -= dmg
-	if health <= 0:
-		queue_free()
+
