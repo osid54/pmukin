@@ -26,4 +26,6 @@ func go(targ: Array, dmg: Array):
 				targ[j] = -1
 		await get_tree().create_timer(.005).timeout
 	texture = null
+	if EnemyController.enemyPath == [0,0,0,0,0]:
+		pass
 	#Autoload.passTime()
