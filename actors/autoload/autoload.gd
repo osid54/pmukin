@@ -36,12 +36,13 @@ var tickable := true
 
 func _ready():
 	loadLevel.connect(setLevel)
-	EnemyController.spawnEnemies(level[levelNum][2])
+	setLevel()
 
 func setLevel():
-	EnemyController.spawnEnemies(level[levelNum][2])
 	if levelNum == level.size():
 		spawnRandom()
+	else:
+		EnemyController.spawnEnemies(level[levelNum][2])
 
 func _process(_delta):
 #	if Input.is_action_just_pressed("spawn"):

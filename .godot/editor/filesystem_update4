@@ -14,3 +14,6 @@ res://actors/characters/decoPlant.tscn
 res://actors/characters/enemyController.tscn
 res://actors/characters/enemyShroom.gd
 res://actors/objects/sign.gd
+res://src/themes/button.tres
+res://scenes/menu.tscn
+res://scenes/QuitButton.gd

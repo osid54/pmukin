@@ -12,10 +12,13 @@ var inUse := false
 
 func _ready():
 	Autoload.loadLevel.connect(reset)
-	if boxNum <= Autoload.level[Autoload.levelNum][0]:
-		visible = true
+	if Autoload.levelNum < Autoload.level.size():
+		if boxNum <= Autoload.level[Autoload.levelNum][0]:
+			visible = true
+		else:
+			visible = false
 	else:
-		visible = false
+		visible = true
 
 func reset():
 	if plant != null:

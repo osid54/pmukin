@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://vxyn83h13wsp"]
+[gd_scene load_steps=22 format=3 uid="uid://vxyn83h13wsp"]
 
 [ext_resource type="PackedScene" uid="uid://dy2pn08bj51in" path="res://actors/characters/mainShroom.tscn" id="1_6iywo"]
 [ext_resource type="Texture2D" uid="uid://biuw718xc5ukc" path="res://src/sprites/other/sky.png" id="1_yc1m3"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cyqhr64so8l06" path="res://actors/characters/decoPlant.tscn" id="10_cc6q0"]
 [ext_resource type="PackedScene" uid="uid://cbkibrct0ouh4" path="res://actors/objects/heart.tscn" id="11_hw7ps"]
 [ext_resource type="PackedScene" uid="uid://daoi2m671hapj" path="res://actors/characters/scalingCamera.tscn" id="15_8vtdp"]
+[ext_resource type="Theme" uid="uid://g5ooxdwj4x53" path="res://src/themes/button.tres" id="16_53dex"]
+[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="17_nh026"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_maqsa"]
 particles_animation = true
@@ -267,3 +269,16 @@ loop = false
 [node name="thrownPump" parent="pumpPath/PathFollow2D" instance=ExtResource("10_8ks7h")]
 
 [node name="camera" parent="." instance=ExtResource("15_8vtdp")]
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 1669.0
+offset_top = -1057.0
+offset_right = 1893.0
+offset_bottom = -926.0
+size_flags_vertical = 3
+theme = ExtResource("16_53dex")
+text = "QUIT
+"
+script = ExtResource("17_nh026")
+
+[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
