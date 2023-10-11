@@ -1,8 +1,8 @@
-res://actors/characters/crow.tscn
-res://src/themes/button.tres
-res://scenes/main.tscn
-res://actors/characters/crow.gd
-res://scenes/menu.tscn
 res://actors/autoload/autoload.tscn
+res://src/themes/button.tres
+res://scenes/menu.tscn
+res://scenes/main.tscn
+res://actors/characters/crow.tscn
 res://actors/effects/hint.tscn
-res://actors/effects/pointer.gd
+res://actors/objects/pathTile.tscn
+res://actors/objects/pathTile.gd

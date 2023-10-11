@@ -1,4 +1,4 @@
 extends Sprite2D
 
-#func _ready():
-#	print(position.x,position.y+64)
+func _ready():
+	flip_h = randi_range(0,2)

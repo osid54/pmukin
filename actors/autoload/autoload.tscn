@@ -8,7 +8,6 @@ script = ExtResource("1_7dkwf")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
 
 [node name="gameover" type="Label" parent="."]
 z_index = 50
@@ -31,5 +30,3 @@ theme_override_font_sizes/font_size = 1000
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
