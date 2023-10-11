@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ohu6sxhfpkve"]
+[gd_scene load_steps=11 format=3 uid="uid://ohu6sxhfpkve"]
 
 [ext_resource type="Texture2D" uid="uid://rqpuj7mqlhxe" path="res://src/sprites/bird/bird1.png" id="1_nxknf"]
 [ext_resource type="Texture2D" uid="uid://cl327fxrss3c" path="res://src/sprites/bird/bird2.png" id="2_a4iul"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://actors/characters/crow.gd" id="4_pgd5a"]
 [ext_resource type="PackedScene" uid="uid://dipasbmlgo3y4" path="res://actors/effects/speech.tscn" id="5_kyyxg"]
 [ext_resource type="PackedScene" uid="uid://dpvtom6svaasm" path="res://actors/effects/hint.tscn" id="6_vtfrl"]
+[ext_resource type="Texture2D" uid="uid://c158cocvfvoqj" path="res://src/sprites/bird/birdPerch.png" id="7_6q4re"]
+[ext_resource type="PackedScene" uid="uid://b3q8ojpfkkddj" path="res://actors/effects/pointer.tscn" id="8_rfxsv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5uw3r"]
 animations = [{
@@ -27,6 +29,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfrxg"]
+size = Vector2(84, 46)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_5uw3r")
 frame_progress = 0.654893
@@ -37,3 +42,21 @@ position = Vector2(100, -36)
 
 [node name="hint" parent="." instance=ExtResource("6_vtfrl")]
 position = Vector2(-1, -229)
+
+[node name="BirdPerch" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(0, 100)
+texture = ExtResource("7_6q4re")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 199)
+shape = SubResource("RectangleShape2D_xfrxg")
+
+[node name="pointer" parent="." instance=ExtResource("8_rfxsv")]
+position = Vector2(-1, -120)
+col = "crow"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

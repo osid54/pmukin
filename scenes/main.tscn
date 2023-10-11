@@ -129,7 +129,7 @@ position = Vector2(-1424, 137)
 boxNum = 2
 
 [node name="bag" parent="root stuff" instance=ExtResource("9_i31qb")]
-position = Vector2(-1244, 120)
+position = Vector2(-1242, 151)
 
 [node name="BirdPerch" type="Sprite2D" parent="root stuff"]
 position = Vector2(-1076, 53)
