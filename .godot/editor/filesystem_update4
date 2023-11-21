@@ -1,8 +1,7 @@
-res://actors/autoload/autoload.tscn
-res://src/themes/button.tres
 res://scenes/menu.tscn
+res://src/themes/button.tres
 res://scenes/main.tscn
+res://actors/autoload/autoload.tscn
 res://actors/characters/crow.tscn
 res://actors/effects/hint.tscn
 res://actors/objects/pathTile.tscn
-res://actors/objects/pathTile.gd
