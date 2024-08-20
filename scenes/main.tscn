@@ -25,17 +25,15 @@ particles_anim_v_frames = 2
 particles_anim_loop = false
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6w1ge"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(0, 540, 1)
-particle_flag_disable_z = true
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 50.0
-initial_velocity_max = 75.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 angle_min = -15.0
 angle_max = 15.0
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 anim_offset_max = 1.0
 
