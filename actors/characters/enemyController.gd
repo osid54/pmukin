@@ -94,7 +94,7 @@ func checkEnd():
 	for i in range(enemyPath.size()):
 		if enemyPath[i] != null:
 			if enemyPath[i].health <= 0:
-				enemyPath[i].queue_free()
+				enemyPath[i].die()
 				enemyPath[i] = null
 				enemyKilled.emit()
 	if enemyPath == [null,null,null,null,null]:

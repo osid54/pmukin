@@ -269,13 +269,14 @@ loop = false
 [node name="camera" parent="." instance=ExtResource("15_8vtdp")]
 
 [node name="QuitButton" parent="." instance=ExtResource("16_7w6nv")]
+visible = false
 offset_left = 1673.0
 offset_top = -1057.0
 offset_right = 1897.0
 offset_bottom = -926.0
 
 [node name="ResetButton" parent="." instance=ExtResource("17_4ffy4")]
-offset_left = 1383.0
+offset_left = 1620.0
 offset_top = -1057.0
-offset_right = 1656.0
+offset_right = 1893.0
 offset_bottom = -926.0

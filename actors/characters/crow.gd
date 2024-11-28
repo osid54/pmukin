@@ -8,12 +8,14 @@ func reset():
 	$pointer.visible = false
 
 func interact():
-	$hint.visible = true
-	$pointer.visible = false
+	if Autoload.levelNum < Autoload.level.size():
+		$hint.visible = true
+		$pointer.visible = false
 
 func _on_area_2d_area_entered(_area):
-	if $hint.visible == false:
-		$pointer.visible = true
+	if Autoload.levelNum < Autoload.level.size():
+		if $hint.visible == false:
+			$pointer.visible = true
 
 func _on_area_2d_area_exited(_area):
 	$pointer.visible = false

@@ -55,6 +55,7 @@ position = Vector2(0, 199)
 shape = SubResource("RectangleShape2D_xfrxg")
 
 [node name="pointer" parent="." instance=ExtResource("8_rfxsv")]
+visible = false
 position = Vector2(-1, -120)
 col = "crow"
 

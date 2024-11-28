@@ -38,4 +38,5 @@ func go(targ: Array, dmg: Array):
 	p.global_position = global_position
 	get_tree().root.add_child(p)
 	EnemyController.checkEnd()
+	Autoload.tickable = true
 	return

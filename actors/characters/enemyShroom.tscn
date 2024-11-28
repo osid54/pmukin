@@ -1,9 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://f6u2ngo0ntli"]
+[gd_scene load_steps=6 format=3 uid="uid://f6u2ngo0ntli"]
 
 [ext_resource type="SpriteFrames" uid="uid://cu4p7b0pt8top" path="res://src/animationFrames/mushD.tres" id="1_sd71y"]
+[ext_resource type="Texture2D" uid="uid://ct6v632u843jq" path="res://src/sprites/mushTops/topL.png" id="3_t4pdo"]
+[ext_resource type="Texture2D" uid="uid://bjccfwp0nre8g" path="res://src/sprites/mushTops/topM.png" id="4_i02d7"]
+[ext_resource type="Texture2D" uid="uid://bobjp26sgb7xk" path="res://src/sprites/mushTops/topS.png" id="5_tx5qm"]
 [ext_resource type="Script" path="res://actors/characters/enemyShroom.gd" id="7_ow6fm"]
 
 [node name="enemyShroom" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_sd71y")
 animation = &"mushSwalk"
 script = ExtResource("7_ow6fm")
+
+[node name="topL" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 17)
+texture = ExtResource("3_t4pdo")
+
+[node name="topM" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -22)
+texture = ExtResource("4_i02d7")
+
+[node name="topS" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -35)
+texture = ExtResource("5_tx5qm")

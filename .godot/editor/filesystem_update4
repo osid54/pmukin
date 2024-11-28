@@ -1,7 +1,14 @@
 res://scenes/menu.tscn
 res://src/themes/button.tres
+res://actors/characters/enemyShroom.gd
 res://scenes/main.tscn
 res://actors/autoload/autoload.tscn
 res://actors/characters/crow.tscn
 res://actors/effects/hint.tscn
 res://actors/objects/pathTile.tscn
+res://actors/characters/scalingCamera.gd
+res://actors/characters/enemyShroom.tscn
+res://actors/characters/enemyController.gd
+res://actors/autoload/autoload.gd
+res://actors/characters/crow.gd
+res://actors/characters/thrownPump.gd

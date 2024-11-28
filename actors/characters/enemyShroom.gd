@@ -5,6 +5,7 @@ var health := 1
 
 var frames := ["mushD", "mushS", "mushM", "mushL"]
 var offsets := [0, -64, -200, -200]
+@onready var heads := [null, $topS, $topM, $topL]
 
 func _ready():
 	play(frames[enemyType]+"idle")
@@ -29,3 +30,11 @@ func hit(dmg: int):
 	#print("dmg done: ",dmg)
 	health -= dmg
 
+func die():
+	self_modulate = Color(1,1,1,0)
+	heads[enemyType].offset.y += offsets[enemyType]
+	heads[enemyType].visible = true
+	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK).set_parallel(true)
+	tween.tween_property(heads[enemyType],"position",Vector2(0,800),1)
+	await get_tree().create_timer(3).timeout
+	queue_free()

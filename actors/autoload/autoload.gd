@@ -6,7 +6,7 @@ signal heldChanged
 signal died
 signal loadLevel
 
-var levelNum := 0:
+var levelNum := 16:
 	get:
 		return levelNum
 	set(value):
@@ -51,7 +51,7 @@ func _ready():
 func setLevel():
 	heldObject = ""
 	$gameover.visible = false
-	if levelNum == level.size():
+	if levelNum >= level.size():
 		spawnRandom()
 	else:
 		EnemyController.spawnEnemies(level[levelNum][2])
@@ -60,8 +60,9 @@ func _process(_delta):
 #	if Input.is_action_just_pressed("spawn"):
 #		spawnRandom()
 	if Input.is_action_just_pressed("time"):
+		if !tickable:
+			return
 		passTime()
-		tickable = false
 	if Input.is_action_just_pressed("reset"):
 		loadLevel.emit()
 
@@ -80,6 +81,7 @@ func _on_timer_timeout():
 
 func throwPumpkin(targ: Array, dmg: Array):
 	pumpThrown.emit(targ,dmg)
+	tickable = false
 
 func passTime():
 	timeTick.emit()
